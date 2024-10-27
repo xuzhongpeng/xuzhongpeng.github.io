@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Flutter错误收集 | 幺风</title>
+    <meta name="description" content="">
+    
+    
+    <link rel="preload" href="/assets/css/0.styles.da10bf32.css" as="style"><link rel="preload" href="/assets/js/app.f735c987.js" as="script"><link rel="preload" href="/assets/js/4.1b5f1a26.js" as="script"><link rel="preload" href="/assets/js/3.7354cf96.js" as="script"><link rel="preload" href="/assets/js/41.4e813bfa.js" as="script"><link rel="prefetch" href="/assets/js/1.91feba10.js"><link rel="prefetch" href="/assets/js/10.c31bcc1b.js"><link rel="prefetch" href="/assets/js/11.642edadc.js"><link rel="prefetch" href="/assets/js/12.e9bb10d9.js"><link rel="prefetch" href="/assets/js/13.bdd95be6.js"><link rel="prefetch" href="/assets/js/14.b6c81b34.js"><link rel="prefetch" href="/assets/js/15.b5139249.js"><link rel="prefetch" href="/assets/js/16.1ade8e0c.js"><link rel="prefetch" href="/assets/js/17.f0b30fb5.js"><link rel="prefetch" href="/assets/js/18.1c883b67.js"><link rel="prefetch" href="/assets/js/19.3e639663.js"><link rel="prefetch" href="/assets/js/20.74962acf.js"><link rel="prefetch" href="/assets/js/21.f837615d.js"><link rel="prefetch" href="/assets/js/22.933fde40.js"><link rel="prefetch" href="/assets/js/23.9334c5ee.js"><link rel="prefetch" href="/assets/js/24.ef408fc2.js"><link rel="prefetch" href="/assets/js/25.f9800b90.js"><link rel="prefetch" href="/assets/js/26.f56ce7bf.js"><link rel="prefetch" href="/assets/js/27.267e0efb.js"><link rel="prefetch" href="/assets/js/28.1aafaa74.js"><link rel="prefetch" href="/assets/js/29.bf71bb2d.js"><link rel="prefetch" href="/assets/js/30.65608550.js"><link rel="prefetch" href="/assets/js/31.c5de1bf4.js"><link rel="prefetch" href="/assets/js/32.43ee74a8.js"><link rel="prefetch" href="/assets/js/33.1efff8a5.js"><link rel="prefetch" href="/assets/js/34.89d049a4.js"><link rel="prefetch" href="/assets/js/35.6b5e7256.js"><link rel="prefetch" href="/assets/js/36.1be005db.js"><link rel="prefetch" href="/assets/js/37.db62ff97.js"><link rel="prefetch" href="/assets/js/38.5cf11128.js"><link rel="prefetch" href="/assets/js/39.fa355553.js"><link rel="prefetch" href="/assets/js/40.7490c5e3.js"><link rel="prefetch" href="/assets/js/42.93650a8e.js"><link rel="prefetch" href="/assets/js/43.9f1ac82d.js"><link rel="prefetch" href="/assets/js/44.bd781139.js"><link rel="prefetch" href="/assets/js/45.2c5e635b.js"><link rel="prefetch" href="/assets/js/46.50f53b28.js"><link rel="prefetch" href="/assets/js/47.5478a007.js"><link rel="prefetch" href="/assets/js/48.ec71092b.js"><link rel="prefetch" href="/assets/js/49.f17a1618.js"><link rel="prefetch" href="/assets/js/5.4c86b808.js"><link rel="prefetch" href="/assets/js/50.b1e9909e.js"><link rel="prefetch" href="/assets/js/51.777f406a.js"><link rel="prefetch" href="/assets/js/52.f3a47314.js"><link rel="prefetch" href="/assets/js/53.8bda39e8.js"><link rel="prefetch" href="/assets/js/54.6bdd66b2.js"><link rel="prefetch" href="/assets/js/55.d3af29b9.js"><link rel="prefetch" href="/assets/js/56.5e98aed3.js"><link rel="prefetch" href="/assets/js/57.8fac4797.js"><link rel="prefetch" href="/assets/js/58.1f764b7f.js"><link rel="prefetch" href="/assets/js/59.cd677a6a.js"><link rel="prefetch" href="/assets/js/6.d79a3977.js"><link rel="prefetch" href="/assets/js/60.83d74725.js"><link rel="prefetch" href="/assets/js/61.e61ccd9b.js"><link rel="prefetch" href="/assets/js/62.444cc809.js"><link rel="prefetch" href="/assets/js/63.157bbc00.js"><link rel="prefetch" href="/assets/js/64.2ec80c70.js"><link rel="prefetch" href="/assets/js/65.d35a0001.js"><link rel="prefetch" href="/assets/js/66.6f92e582.js"><link rel="prefetch" href="/assets/js/67.9d51e14d.js"><link rel="prefetch" href="/assets/js/68.5675c3e2.js"><link rel="prefetch" href="/assets/js/69.e536d7ac.js"><link rel="prefetch" href="/assets/js/7.0dcc7463.js"><link rel="prefetch" href="/assets/js/70.e187963b.js"><link rel="prefetch" href="/assets/js/71.09bda95d.js"><link rel="prefetch" href="/assets/js/72.aefd789f.js"><link rel="prefetch" href="/assets/js/73.20936a8d.js"><link rel="prefetch" href="/assets/js/74.d17921e6.js"><link rel="prefetch" href="/assets/js/75.0ff9c5e9.js"><link rel="prefetch" href="/assets/js/76.479d210c.js"><link rel="prefetch" href="/assets/js/77.c5443f0d.js"><link rel="prefetch" href="/assets/js/78.666b2fe9.js"><link rel="prefetch" href="/assets/js/79.949a1f44.js"><link rel="prefetch" href="/assets/js/8.67e8e6f2.js"><link rel="prefetch" href="/assets/js/9.70c87633.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.da10bf32.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container reform"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/images/logo.png" alt="幺风" class="logo"> <span class="site-name can-hide">幺风</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link"><span class="reform-jia" style="font-size:1rem;"></span>
+主页</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="reform-zhi"></span> <span class="title">博文</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/frontend/" class="nav-link"><!---->
+前端</a></li><li class="dropdown-item"><!----> <a href="/blog/flutter/" class="nav-link router-link-active"><!---->
+Flutter</a></li><li class="dropdown-item"><!----> <a href="/blog/coding/" class="nav-link"><!---->
+学习思考</a></li><li class="dropdown-item"><!----> <a href="/blog/algorithm/" class="nav-link"><!---->
+算法与数据结构</a></li><li class="dropdown-item"><!----> <a href="/blog/reading/" class="nav-link"><!---->
+阅读笔记</a></li><li class="dropdown-item"><!----> <a href="/blog/reflection/" class="nav-link"><!---->
+思考</a></li><li class="dropdown-item"><!----> <a href="/blog/canvas/" class="nav-link"><!---->
+渲染相关</a></li><li class="dropdown-item"><!----> <a href="/blog/gesture/" class="nav-link"><!---->
+事件相关</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="reform-shuben"></span> <span class="title">文档</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/document/vuepress-theme-reform.html" class="nav-link"><!---->
+vuepress-theme-reform</a></li><li class="dropdown-item"><!----> <a href="/document/弹幕插件文档.html" class="nav-link"><!---->
+弹幕插件文档</a></li></ul></div></div><div class="nav-item"><a href="/tags/" class="nav-link"><!---->
+标签云</a></div><div class="nav-item"><a href="/about/" class="nav-link"><!---->
+关于我</a></div> <a href="https://github.com/xuzhongpeng" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link"><span class="reform-jia" style="font-size:1rem;"></span>
+主页</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="reform-zhi"></span> <span class="title">博文</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/frontend/" class="nav-link"><!---->
+前端</a></li><li class="dropdown-item"><!----> <a href="/blog/flutter/" class="nav-link router-link-active"><!---->
+Flutter</a></li><li class="dropdown-item"><!----> <a href="/blog/coding/" class="nav-link"><!---->
+学习思考</a></li><li class="dropdown-item"><!----> <a href="/blog/algorithm/" class="nav-link"><!---->
+算法与数据结构</a></li><li class="dropdown-item"><!----> <a href="/blog/reading/" class="nav-link"><!---->
+阅读笔记</a></li><li class="dropdown-item"><!----> <a href="/blog/reflection/" class="nav-link"><!---->
+思考</a></li><li class="dropdown-item"><!----> <a href="/blog/canvas/" class="nav-link"><!---->
+渲染相关</a></li><li class="dropdown-item"><!----> <a href="/blog/gesture/" class="nav-link"><!---->
+事件相关</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="reform-shuben"></span> <span class="title">文档</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/document/vuepress-theme-reform.html" class="nav-link"><!---->
+vuepress-theme-reform</a></li><li class="dropdown-item"><!----> <a href="/document/弹幕插件文档.html" class="nav-link"><!---->
+弹幕插件文档</a></li></ul></div></div><div class="nav-item"><a href="/tags/" class="nav-link"><!---->
+标签云</a></div><div class="nav-item"><a href="/about/" class="nav-link"><!---->
+关于我</a></div> <a href="https://github.com/xuzhongpeng" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>Flutter错误收集</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/flutter/collect_error.html#错误收集机制" class="sidebar-link">错误收集机制</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blog/flutter/collect_error.html#fluttererror-onerror" class="sidebar-link">FlutterError.onError</a></li><li class="sidebar-sub-header"><a href="/blog/flutter/collect_error.html#runzoned" class="sidebar-link">runZoned</a></li></ul></li><li><a href="/blog/flutter/collect_error.html#总结" class="sidebar-link">总结</a><ul class="sidebar-sub-headers"></ul></li></ul></section></li></ul> </aside> <main class="page" data-v-8958e280> <section class="tags" data-v-8958e280><span class="tagPopup" data-v-8958e280><a href="/tags/?tag=flutter" class="tag" data-v-8958e280>flutter</a></span><span class="tagPopup" data-v-8958e280><a href="/tags/?tag=dart" class="tag" data-v-8958e280>dart</a></span></section> <div class="content theme-default-content content__default" data-v-8958e280><h2 id="错误收集机制"><a href="#错误收集机制" aria-hidden="true" class="header-anchor">#</a> 错误收集机制</h2> <h3 id="fluttererror-onerror"><a href="#fluttererror-onerror" aria-hidden="true" class="header-anchor">#</a> FlutterError.onError</h3> <p>Flutter framework 的错误</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>@override
+void performRebuild() {
+if (!kReleaseMode &amp;&amp; debugProfileBuildsEnabled)
+  Timeline.startSync('${widget.runtimeType}',  arguments: timelineWhitelistArguments);
+assert(_debugSetAllowIgnoredCallsToMarkNeedsBuild(true));
+Widget built;
+try {
+  built = build(); //执行state.build(this)
+  debugWidgetBuilderValue(widget, built);
+} catch (e, stack) {//如果发生错误执行
+  built = ErrorWidget.builder(
+    _debugReportException(
+      ErrorDescription('building $this'),
+      e,
+      stack,
+      informationCollector: () sync* {
+        yield DiagnosticsDebugCreator(DebugCreator(this));
+      },
+    )
+  );
+} finally {
+  // We delay marking the element as clean until after calling build() so
+  // that attempts to markNeedsBuild() during build() will be ignored.
+  _dirty = false;
+  assert(_debugSetAllowIgnoredCallsToMarkNeedsBuild(false));
+}
+try {
+  _child = updateChild(_child, built, slot);
+  assert(_child != null);
+} catch (e, stack) {
+  built = ErrorWidget.builder(
+    _debugReportException(
+      ErrorDescription('building $this'),
+      e,
+      stack,
+      informationCollector: () sync* {
+        yield DiagnosticsDebugCreator(DebugCreator(this));
+      },
+    )
+  );
+  _child = updateChild(null, built, slot);
+}
+
+if (!kReleaseMode &amp;&amp; debugProfileBuildsEnabled)
+  Timeline.finishSync();
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br></div></div> <p>代码在<a href="https://github.com/flutter/flutter/blob/da0a7d8b2e3234f21c230a5424bf2569b9b28ca8/packages/flutter/lib/src/widgets/framework.dart#L4199" target="_blank" rel="noopener noreferrer">这里<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <p>当我们页面执行 build 方法时，如果发生错误，会执行<code>ErrorWidget.builder</code>方法进行渲染，这个时候就是我们常看到的死亡红屏。而在 builder 里面调用了 <code>_debugReportException</code>这个方法，我们转移下战地</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>FlutterErrorDetails _debugReportException(
+  DiagnosticsNode context,
+  dynamic exception,
+  StackTrace stack, {
+  InformationCollector informationCollector,
+}) {
+  final FlutterErrorDetails details = FlutterErrorDetails(
+    exception: exception,
+    stack: stack,
+    library: 'widgets library',
+    context: context,
+    informationCollector: informationCollector,
+  );
+  FlutterError.reportError(details);
+  return details;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br></div></div><p>在<code>framework.dart</code>文件末尾，看到了定义的<code>_debugReportException</code>方法，该方法中调用了<code>FlutterError.reporError</code>，这个【报告错误】是什么意思呢</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>class FlutterError extends Error with DiagnosticableTreeMixin implements AssertionError {
+...
+static void reportError(FlutterErrorDetails details) {
+        assert(details != null);
+        assert(details.exception != null);
+        if (onError != null)
+          onError(details);
+    }
+...
+static FlutterExceptionHandler onError = dumpErrorToConsole;
+...
+static void dumpErrorToConsole(FlutterErrorDetails details, { bool forceReport = false }) {
+    assert(details != null);
+    assert(details.exception != null);
+    bool reportError = details.silent != true; // could be null
+    assert(() {
+      // In checked mode, we ignore the &quot;silent&quot; flag.
+      reportError = true;
+      return true;
+    }());
+    if (!reportError &amp;&amp; !forceReport)
+      return;
+    if (_errorCount == 0 || forceReport) {
+      debugPrint(
+        TextTreeRenderer(
+          wrapWidth: wrapWidth,
+          wrapWidthProperties: wrapWidth,
+          maxDescendentsTruncatableNode: 5,
+        ).render(details.toDiagnosticsNode(style: DiagnosticsTreeStyle.error)).trimRight()
+      );
+    } else {
+      debugPrint('Another exception was thrown: ${details.summary}');
+    }
+    _errorCount += 1;
+  }
+...
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br></div></div><p><code>reportError</code>中对 onError 静态方法进行了判断，如果它不是 null，就执行它，在 onError 中默认绑定了<code>dumpErrorToConsole</code>函数对错误进行打印。如果我们重新对<code>onError</code>绑定函数，那是不是就可以对系统的错误进行监听了。</p> <p>函数大致执行步骤</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>performRebuild
+⬇️
+(StatefullWidget/StatelessWidget)build()
+⬇️报错
+_debugReportException
+⬇️
+FlutterError.reportError
+⬇️
+FlutterError.onError
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div><p>那我们可以在 Flutter 启动的时候给 onError 绑定一个函数</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>void main(){
+    FlutterError.onError=(FlutterErrorDetails details){
+        print(&quot;报错了&quot;);
+        FlutterError.dumpErrorToConsole(details);
+    }
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><p>如果我们在页面抛出一个错误,那将会打印下面的内容
+<img src="https://blog-1253495453.cos.ap-chongqing.myqcloud.com/%E6%8A%A5%E9%94%99.png" alt=""></p> <p>如果我们这样写</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>try {
+    Future.microtask(() {
+      throw Future.error('d');
+    });
+  } catch (e, stack) {
+      print(&quot;报错了&quot;);
+  }
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><p>这样 catch 就执行不了了。在 Flutter 中，还有一些 Flutter 没有为我们捕获的异常，如调用空对象方法异常、Future 中的异常。在 Dart 中，异常分两类：同步异常和异步异常，同步异常可以通过 try/catch 捕获，而异步异常则比较麻烦，这个时候我们可以使用 runZoned 方法来 catch 错误。</p> <h3 id="runzoned"><a href="#runzoned" aria-hidden="true" class="header-anchor">#</a> runZoned</h3> <blockquote><p>Zone 表示一个代码执行的环境范围，为了方便理解，我们可以将 Zone 类比为一个代码执行沙箱，不同沙箱的之间是隔离的，沙箱可以捕获、拦截或修改一些代码行为，如 Zone 中可以捕获日志输出、Timer 创建、微任务调度的行为，同时 Zone 也可以捕获所有未处理的异常。</p></blockquote> <div class="language- line-numbers-mode"><pre class="language-text"><code>R runZoned&lt;R&gt;(R body(), {
+    Map zoneValues,
+    ZoneSpecification zoneSpecification,
+    Function onError,
+})
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><p>zoneValues: Zone 的私有数据，可以通过实例 zone[key]获取，可以理解为每个“沙箱”的私有数据。</p> <p>zoneSpecification：Zone 的一些配置，可以自定义一些代码行为，比如拦截日志输出行为等，举个例子：</p> <p>下面面是拦截应用中所有调用 print 输出日志的行为。</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>main() {
+    runZoned(() =&gt; runApp(MyApp()), zoneSpecification: new ZoneSpecification(
+        print: (Zone self, ZoneDelegate parent, Zone zone, String line) {
+        parent.print(zone, &quot;Intercepted: $line&quot;);
+        }),
+    );
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><p>这样一来，我们 APP 中所有调用 print 方法输出日志的行为都会被拦截，通过这种方式，我们也可以在应用中记录日志，等到应用触发未捕获的异常时，将异常信息和日志统一上报。ZoneSpecification 还可以自定义一些其他行为，读者可以查看 API 文档。</p> <p>onError：Zone 中未捕获异常处理回调，如果开发者提供了 onError 回调或者通过 ZoneSpecification.handleUncaughtError 指定了错误处理回调，那么这个 zone 将会变成一个 error-zone，该 error-zone 中发生未捕获异常(无论同步还是异步)时都会调用开发者提供的回调，如：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>runZoned(() {
+    runApp(MyApp());
+}, onError: (Object obj, StackTrace stack) {
+    var details=makeDetails(obj,stack);
+    reportError(details);
+});
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><h2 id="总结"><a href="#总结" aria-hidden="true" class="header-anchor">#</a> 总结</h2> <p>我们最终的异常捕获和上报代码如下：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>void collectLog(String line){
+    ... //收集日志
+}
+void reportErrorAndLog(FlutterErrorDetails details){
+    ... //上报错误和日志逻辑
+}
+
+FlutterErrorDetails makeDetails(Object obj, StackTrace stack){
+    ...// 构建错误信息
+}
+
+void main() {
+  FlutterError.onError = (FlutterErrorDetails details) {
+    reportErrorAndLog(details);
+  };
+  runZoned(
+    () =&gt; runApp(MyApp()),
+    zoneSpecification: ZoneSpecification(
+      print: (Zone self, ZoneDelegate parent, Zone zone, String line) {
+        collectLog(line); //手机日志
+      },
+    ),
+    onError: (Object obj, StackTrace stack) {
+      var details = makeDetails(obj, stack);
+      reportErrorAndLog(details);
+    },
+  );
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br></div></div></div> <footer class="page-edit" data-v-8958e280><!----> <div class="last-updated" data-v-8958e280><span class="prefix" data-v-8958e280>Last Updated:</span> <span class="time" data-v-8958e280>8/12/2020, 1:34:59 PM</span></div></footer> <!----> <div id="gitalk-container" data-v-8958e280></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.f735c987.js" defer></script><script src="/assets/js/4.1b5f1a26.js" defer></script><script src="/assets/js/3.7354cf96.js" defer></script><script src="/assets/js/41.4e813bfa.js" defer></script>
+  </body>
+</html>

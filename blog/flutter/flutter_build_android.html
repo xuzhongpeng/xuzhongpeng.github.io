@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>基于Flutter1.12.13混合开发Android自动打包dart脚本 | 幺风</title>
+    <meta name="description" content="">
+    
+    
+    <link rel="preload" href="/assets/css/0.styles.da10bf32.css" as="style"><link rel="preload" href="/assets/js/app.f735c987.js" as="script"><link rel="preload" href="/assets/js/4.1b5f1a26.js" as="script"><link rel="preload" href="/assets/js/3.7354cf96.js" as="script"><link rel="preload" href="/assets/js/45.2c5e635b.js" as="script"><link rel="prefetch" href="/assets/js/1.91feba10.js"><link rel="prefetch" href="/assets/js/10.c31bcc1b.js"><link rel="prefetch" href="/assets/js/11.642edadc.js"><link rel="prefetch" href="/assets/js/12.e9bb10d9.js"><link rel="prefetch" href="/assets/js/13.bdd95be6.js"><link rel="prefetch" href="/assets/js/14.b6c81b34.js"><link rel="prefetch" href="/assets/js/15.b5139249.js"><link rel="prefetch" href="/assets/js/16.1ade8e0c.js"><link rel="prefetch" href="/assets/js/17.f0b30fb5.js"><link rel="prefetch" href="/assets/js/18.1c883b67.js"><link rel="prefetch" href="/assets/js/19.3e639663.js"><link rel="prefetch" href="/assets/js/20.74962acf.js"><link rel="prefetch" href="/assets/js/21.f837615d.js"><link rel="prefetch" href="/assets/js/22.933fde40.js"><link rel="prefetch" href="/assets/js/23.9334c5ee.js"><link rel="prefetch" href="/assets/js/24.ef408fc2.js"><link rel="prefetch" href="/assets/js/25.f9800b90.js"><link rel="prefetch" href="/assets/js/26.f56ce7bf.js"><link rel="prefetch" href="/assets/js/27.267e0efb.js"><link rel="prefetch" href="/assets/js/28.1aafaa74.js"><link rel="prefetch" href="/assets/js/29.bf71bb2d.js"><link rel="prefetch" href="/assets/js/30.65608550.js"><link rel="prefetch" href="/assets/js/31.c5de1bf4.js"><link rel="prefetch" href="/assets/js/32.43ee74a8.js"><link rel="prefetch" href="/assets/js/33.1efff8a5.js"><link rel="prefetch" href="/assets/js/34.89d049a4.js"><link rel="prefetch" href="/assets/js/35.6b5e7256.js"><link rel="prefetch" href="/assets/js/36.1be005db.js"><link rel="prefetch" href="/assets/js/37.db62ff97.js"><link rel="prefetch" href="/assets/js/38.5cf11128.js"><link rel="prefetch" href="/assets/js/39.fa355553.js"><link rel="prefetch" href="/assets/js/40.7490c5e3.js"><link rel="prefetch" href="/assets/js/41.4e813bfa.js"><link rel="prefetch" href="/assets/js/42.93650a8e.js"><link rel="prefetch" href="/assets/js/43.9f1ac82d.js"><link rel="prefetch" href="/assets/js/44.bd781139.js"><link rel="prefetch" href="/assets/js/46.50f53b28.js"><link rel="prefetch" href="/assets/js/47.5478a007.js"><link rel="prefetch" href="/assets/js/48.ec71092b.js"><link rel="prefetch" href="/assets/js/49.f17a1618.js"><link rel="prefetch" href="/assets/js/5.4c86b808.js"><link rel="prefetch" href="/assets/js/50.b1e9909e.js"><link rel="prefetch" href="/assets/js/51.777f406a.js"><link rel="prefetch" href="/assets/js/52.f3a47314.js"><link rel="prefetch" href="/assets/js/53.8bda39e8.js"><link rel="prefetch" href="/assets/js/54.6bdd66b2.js"><link rel="prefetch" href="/assets/js/55.d3af29b9.js"><link rel="prefetch" href="/assets/js/56.5e98aed3.js"><link rel="prefetch" href="/assets/js/57.8fac4797.js"><link rel="prefetch" href="/assets/js/58.1f764b7f.js"><link rel="prefetch" href="/assets/js/59.cd677a6a.js"><link rel="prefetch" href="/assets/js/6.d79a3977.js"><link rel="prefetch" href="/assets/js/60.83d74725.js"><link rel="prefetch" href="/assets/js/61.e61ccd9b.js"><link rel="prefetch" href="/assets/js/62.444cc809.js"><link rel="prefetch" href="/assets/js/63.157bbc00.js"><link rel="prefetch" href="/assets/js/64.2ec80c70.js"><link rel="prefetch" href="/assets/js/65.d35a0001.js"><link rel="prefetch" href="/assets/js/66.6f92e582.js"><link rel="prefetch" href="/assets/js/67.9d51e14d.js"><link rel="prefetch" href="/assets/js/68.5675c3e2.js"><link rel="prefetch" href="/assets/js/69.e536d7ac.js"><link rel="prefetch" href="/assets/js/7.0dcc7463.js"><link rel="prefetch" href="/assets/js/70.e187963b.js"><link rel="prefetch" href="/assets/js/71.09bda95d.js"><link rel="prefetch" href="/assets/js/72.aefd789f.js"><link rel="prefetch" href="/assets/js/73.20936a8d.js"><link rel="prefetch" href="/assets/js/74.d17921e6.js"><link rel="prefetch" href="/assets/js/75.0ff9c5e9.js"><link rel="prefetch" href="/assets/js/76.479d210c.js"><link rel="prefetch" href="/assets/js/77.c5443f0d.js"><link rel="prefetch" href="/assets/js/78.666b2fe9.js"><link rel="prefetch" href="/assets/js/79.949a1f44.js"><link rel="prefetch" href="/assets/js/8.67e8e6f2.js"><link rel="prefetch" href="/assets/js/9.70c87633.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.da10bf32.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container reform"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/images/logo.png" alt="幺风" class="logo"> <span class="site-name can-hide">幺风</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link"><span class="reform-jia" style="font-size:1rem;"></span>
+主页</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="reform-zhi"></span> <span class="title">博文</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/frontend/" class="nav-link"><!---->
+前端</a></li><li class="dropdown-item"><!----> <a href="/blog/flutter/" class="nav-link router-link-active"><!---->
+Flutter</a></li><li class="dropdown-item"><!----> <a href="/blog/coding/" class="nav-link"><!---->
+学习思考</a></li><li class="dropdown-item"><!----> <a href="/blog/algorithm/" class="nav-link"><!---->
+算法与数据结构</a></li><li class="dropdown-item"><!----> <a href="/blog/reading/" class="nav-link"><!---->
+阅读笔记</a></li><li class="dropdown-item"><!----> <a href="/blog/reflection/" class="nav-link"><!---->
+思考</a></li><li class="dropdown-item"><!----> <a href="/blog/canvas/" class="nav-link"><!---->
+渲染相关</a></li><li class="dropdown-item"><!----> <a href="/blog/gesture/" class="nav-link"><!---->
+事件相关</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="reform-shuben"></span> <span class="title">文档</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/document/vuepress-theme-reform.html" class="nav-link"><!---->
+vuepress-theme-reform</a></li><li class="dropdown-item"><!----> <a href="/document/弹幕插件文档.html" class="nav-link"><!---->
+弹幕插件文档</a></li></ul></div></div><div class="nav-item"><a href="/tags/" class="nav-link"><!---->
+标签云</a></div><div class="nav-item"><a href="/about/" class="nav-link"><!---->
+关于我</a></div> <a href="https://github.com/xuzhongpeng" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link"><span class="reform-jia" style="font-size:1rem;"></span>
+主页</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="reform-zhi"></span> <span class="title">博文</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/frontend/" class="nav-link"><!---->
+前端</a></li><li class="dropdown-item"><!----> <a href="/blog/flutter/" class="nav-link router-link-active"><!---->
+Flutter</a></li><li class="dropdown-item"><!----> <a href="/blog/coding/" class="nav-link"><!---->
+学习思考</a></li><li class="dropdown-item"><!----> <a href="/blog/algorithm/" class="nav-link"><!---->
+算法与数据结构</a></li><li class="dropdown-item"><!----> <a href="/blog/reading/" class="nav-link"><!---->
+阅读笔记</a></li><li class="dropdown-item"><!----> <a href="/blog/reflection/" class="nav-link"><!---->
+思考</a></li><li class="dropdown-item"><!----> <a href="/blog/canvas/" class="nav-link"><!---->
+渲染相关</a></li><li class="dropdown-item"><!----> <a href="/blog/gesture/" class="nav-link"><!---->
+事件相关</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="reform-shuben"></span> <span class="title">文档</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/document/vuepress-theme-reform.html" class="nav-link"><!---->
+vuepress-theme-reform</a></li><li class="dropdown-item"><!----> <a href="/document/弹幕插件文档.html" class="nav-link"><!---->
+弹幕插件文档</a></li></ul></div></div><div class="nav-item"><a href="/tags/" class="nav-link"><!---->
+标签云</a></div><div class="nav-item"><a href="/about/" class="nav-link"><!---->
+关于我</a></div> <a href="https://github.com/xuzhongpeng" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>基于Flutter1.12.13混合开发Android自动打包dart脚本</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/flutter/flutter_build_android.html#前言" class="sidebar-link">前言</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/blog/flutter/flutter_build_android.html#flutter-build-aar" class="sidebar-link">flutter build aar?</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/blog/flutter/flutter_build_android.html#优化" class="sidebar-link">优化</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/blog/flutter/flutter_build_android.html#脚本开发" class="sidebar-link">脚本开发</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/blog/flutter/flutter_build_android.html#目前问题" class="sidebar-link">目前问题</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/blog/flutter/flutter_build_android.html#总结" class="sidebar-link">总结</a><ul class="sidebar-sub-headers"></ul></li></ul></section></li></ul> </aside> <main class="page" data-v-8958e280> <section class="tags" data-v-8958e280><span class="tagPopup" data-v-8958e280><a href="/tags/?tag=flutter" class="tag" data-v-8958e280>flutter</a></span><span class="tagPopup" data-v-8958e280><a href="/tags/?tag=dart" class="tag" data-v-8958e280>dart</a></span></section> <div class="content theme-default-content content__default" data-v-8958e280><blockquote><p>flutter 版本：v1.12.13+hotfix.9</p></blockquote> <blockquote><p>测试系统 macOS</p></blockquote> <h2 id="前言"><a href="#前言" aria-hidden="true" class="header-anchor">#</a> 前言</h2> <p>自从 Flutter1.9.1 稳定版升级到 1.12.13 稳定版后，打包也出现了一些变化，之前使用 fat-aar 后能够把所有的 Flutter 内容全部打包进一个 aar 中，上传到公司 maven 库，Android 开发直接 implementation 对应 aar 就能够使用 Flutter 的相关内容及资源了，升级到 1.12.13 后，Flutter 将与 Flutter 的核心库放到了云上，这会导致 Flutter 使用 fat-aar 打出来的包不可使用 Flutter 相关资源，例如 FlutterEngine。如何在 1.12.13 版本下更好的自动化构建及 Android 更加友好的集成，下面是我的一些思路。</p> <h2 id="flutter-build-aar"><a href="#flutter-build-aar" aria-hidden="true" class="header-anchor">#</a> flutter build aar?</h2> <p>升级 1.12.13 后，官方提供了<code>flutter build aar</code>命令来打出 aar 资源，对应的使用方式官方有比较详细的流程，<a href="https://flutter.dev/docs/development/add-to-app/android/project-setup" target="_blank" rel="noopener noreferrer">flutter build aar 流程<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <p>官方提供的方案使用<code>flutter build aar</code>打包后，会在 build 文件夹下把各个插件资源分别打入不同的文件夹，每个文件夹都会有对应的 aar 及一些信息，我们可以把这个资源全部上传到 maven，这个时候 maven 库可能是这样
+<img src="https://blog-1253495453.cos.ap-chongqing.myqcloud.com/build_android/maven_file_20200526.png" alt="maven目录截图"></p> <p>我也尝试过使用官方打出的 aar 上传到 maven，但这会导致两个问题：</p> <ol><li>上传多个文件将会非常慢，严重影响打包时间</li> <li>Android 开发人员下拉 Flutter 相关 aar 也会很慢，而且有很大概率会超时</li></ol> <h2 id="优化"><a href="#优化" aria-hidden="true" class="header-anchor">#</a> 优化</h2> <p>原理：</p> <ol><li>通过引入 fat-aar，把除了 flutter 核心模块外的模块打成一个 aar</li> <li>通过上传 maven 所使用的 pom 文件将 flutter 核心模块写入到 pom 文件中，大概是这个样子</li></ol> <div class="language- line-numbers-mode"><pre class="language-text"><code>&lt;dependency&gt;
+  &lt;groupId&gt;io.flutter&lt;/groupId&gt;
+  &lt;artifactId&gt;flutter_embedding_release&lt;/artifactId&gt;
+  &lt;version&gt;1.0.0-af51afceb8886cc11e25047523c4e0c7e1f5d408&lt;/version&gt;
+  &lt;scope&gt;compile&lt;/scope&gt;
+&lt;/dependency&gt;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><ol start="3"><li>Android 客户端此方式引入<code>api 'xxx:0.0.1'</code>(原来没升级前引入方式是<code>api 'xxx:0.0.1@aar'</code>),在<code>allprojects.repositories</code>中添加</li></ol> <div class="language- line-numbers-mode"><pre class="language-text"><code>maven {
+    url 'http://download.flutter.io'
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p>及自己 maven 对应的 url</p> <h2 id="脚本开发"><a href="#脚本开发" aria-hidden="true" class="header-anchor">#</a> 脚本开发</h2> <ol><li>封装执行 sh 脚本代码,打印执行 sh 命令的信息</li></ol> <div class="language- line-numbers-mode"><pre class="language-text"><code>//执行sh脚本
+Future&lt;int&gt; start(String executable, List&lt;String&gt; arguments,
+    {String workingDirectory,
+    Map&lt;String, String&gt; environment,
+    bool includeParentEnvironment = true,
+    bool runInShell = true,
+    ProcessStartMode mode = ProcessStartMode.normal}) async {
+  Process result = await Process.start(executable, arguments,
+      workingDirectory: workingDirectory,
+      environment: environment,
+      includeParentEnvironment: includeParentEnvironment,
+      runInShell: runInShell,
+      mode: mode);
+  result.stdout.listen((out) {
+    if (isPrint) print(utf8.decode(out));
+  });
+  result.stderr.listen((err) {
+    print(utf8.decode(err));
+  });
+  return result.exitCode;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br></div></div><ol start="2"><li>执行<code>upgrade</code>拉取最新插件信息</li></ol> <div class="language- line-numbers-mode"><pre class="language-text"><code>await start('flutter', ['pub', 'upgrade']);
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><ol start="3"><li>复制及插入 fat-aar 相关代码及文件</li></ol> <div class="language- line-numbers-mode"><pre class="language-text"><code>print('复制打包aar相关文件');
+  {
+    File copyFile =
+        File(projectDir + '.android/config/dependencies_gradle_plugin.gradle');
+    copyFile.createSync(recursive: true);
+    copyFile.writeAsStringSync(gradlePlugin);
+  }
+  print('插入fat-aar相关的包');
+  {
+    print('插入文件到.andriod/build.gradle');
+    File file = File(projectDir + '/.android/build.gradle');
+    String buildGradle = file.readAsStringSync();
+    if (!buildGradle.contains('com.kezong:fat-aar')) {
+      buildGradle = buildGradle.replaceAllMapped(
+          RegExp(r&quot;'com.android.tools.build:gradle\S+&quot;), (group) {
+        return group.groups([0])[0] + '\nclasspath &quot;com.kezong:fat-aar:1.2.12&quot;';
+      });
+      file.writeAsStringSync(buildGradle);
+    }
+
+    print('插入文件到.andorid/Flutter/build.gradle');
+    File flutterGradleFile =
+        File(projectDir + '/.android/Flutter/build.gradle');
+    String flutterGradleStr = flutterGradleFile.readAsStringSync();
+    if (!flutterGradleStr.contains('com.kezong.fat-aar')) {
+      flutterGradleStr +=
+          '\napply plugin: &quot;com.kezong.fat-aar&quot;\napply from: &quot;../config/dependencies_gradle_plugin.gradle&quot;';
+      flutterGradleFile.writeAsStringSync(flutterGradleStr);
+    }
+  }
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br></div></div><p>其中 gradlePlugin 是一个 gradle 模板</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>//加载aar的gradle
+String gradlePlugin = &quot;&quot;&quot;
+  dependencies {
+    def flutterProjectRoot = rootProject.projectDir.parentFile.toPath()
+    def plugins = new Properties()
+    def pluginsFile = new File(flutterProjectRoot.toFile(), '.flutter-plugins')
+    if (pluginsFile.exists()) {
+        pluginsFile.withReader('UTF-8') { reader -&gt; plugins.load(reader) }
+    }
+    plugins.each { name, path-&gt;
+        File editableAndroidProject = new File(path, 'android' + File.separator + 'build.gradle')
+        println name
+        if (editableAndroidProject.exists()) {
+            embed project(path: &quot;:\$name&quot;, configuration: 'default')
+        }
+    }
+}
+&quot;&quot;&quot;;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br></div></div><ol start="4"><li>开始打包</li></ol> <div class="language- line-numbers-mode"><pre class="language-text"><code>print('开始打包');
+  {
+    int exitCode;
+    print('正在打包...');
+    if (buildMode == 'debug') {
+      exitCode = await start('bash', ['./gradlew', 'assembleProfile'],
+          workingDirectory: '$projectDir/.android');
+    } else if (buildMode == 'release') {
+      exitCode = await start('bash', ['./gradlew', 'assembleRelease'],
+          workingDirectory: '$projectDir/.android');
+    } else {
+      exitCode = await start('bash', ['./gradlew', 'assemble'],
+          workingDirectory: '$projectDir/.android');
+    }
+    if (exitCode != 0) {
+      print('打包出错');
+      return false;
+    } else {
+      print('打包成功');
+    }
+  }
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br></div></div><p>这个时候可以打开<code>.android/Flutter/build/outputs/aar/</code>看到相关的 aar 文件，这里我打 debug 包使用 profile 打包方式，主要原因是我使用的<code>com.kezong:fat-aar</code>插件打出的 debug 包没有把资源打进去，我不清楚这是 bug 还是我使用的方式不对，有人知道可以告诉我一下。</p> <ol start="5"><li>上传 maven</li></ol> <div class="language- line-numbers-mode"><pre class="language-text"><code>print('开始上传maven');
+  {
+    bool result;
+    if (buildMode == 'debug' || buildMode == 'release') {
+      result = await uploadMaven(buildVersion, buildMode);
+      await uploadToWX(buildVersion, buildMode, exitCode == 0);
+      if (!result) {
+        print('上传aar失败');
+        return false;
+      }
+    } else {
+      result = await uploadMaven(buildVersion, 'debug');
+      await uploadToWX(buildVersion, 'debug', exitCode == 0);
+      if (exitCode != 0) {
+        print('上传aar失败');
+        return false;
+      }
+      result = await uploadMaven(buildVersion, 'release');
+      await uploadToWX(buildVersion, 'release', exitCode == 0);
+      if (exitCode != 0) {
+        print('上传aar失败');
+        return false;
+      }
+    }
+  }
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br></div></div><p>其中 uploadMaven 方法是专门用来处理上传 maven 有关的文件及替换版本号等</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>///上传到maven
+Future&lt;bool&gt; uploadMaven(String version, String buildMode) async {
+  if (mavenUrl == 'xxx') {
+    print('你什么都没改，别传maven了');
+    return false;
+  }
+  String pomName; //pom名
+  String build; //arr对应文件名
+  // final dir = Directory(&quot;build/host/outputs/repo&quot;);
+  if (buildMode == 'debug') {
+    pomName = 'trojanDebug';
+    build = 'profile';
+  } else {
+    pomName = 'trojan';
+    build = 'release';
+  }
+  final aar =
+      File(&quot;$projectDir/.android/Flutter/build/outputs/aar/flutter-$build.aar&quot;);
+  final pom1 = File(&quot;$projectDir/configs/trojan.pom&quot;);
+  final tempPath = File(&quot;${Directory.systemTemp.path}/temp.pom&quot;);
+  tempPath.createSync(recursive: true);
+  final temp = pom1.copySync(tempPath.path);
+  print('修改pom内容');
+  {
+    final doc = xml.parse(temp.readAsStringSync());
+    {
+      // 修改自身的版本号
+      final xml.XmlText versionNode =
+          doc.findAllElements(&quot;version&quot;).first.firstChild;
+      versionNode.text = version;
+      final xml.XmlText name =
+          doc.findAllElements(&quot;artifactId&quot;).first.firstChild;
+      name.text = pomName;
+    }
+    final elements = doc.findAllElements(&quot;dependency&quot;);
+    // 修改flutter相关依赖名
+    for (final element in elements) {
+      xml.XmlText artifactId =
+          element.findElements(&quot;artifactId&quot;).first.firstChild;
+      if (artifactId.text.contains('release')) {
+        artifactId.text =
+            artifactId.text.replaceAll('release', build); // 修改依赖的版本号
+        print(artifactId);
+      }
+    }
+    final buffer = StringBuffer();
+    doc.writePrettyTo(buffer, 0, &quot;  &quot;);
+    temp.writeAsStringSync(buffer.toString());
+  }
+  DeployObject deploy = DeployObject()
+    ..aarFile = aar
+    ..pomFile = temp;
+
+  //把用户名密码写入mvn-setting.xml
+  {
+    File setting = File('$projectDir/configs/mvn-settings.xml');
+    final doc = xml.parse(setting.readAsStringSync());
+    final xml.XmlText user = doc.findAllElements(&quot;username&quot;).first.firstChild;
+    user.text = username;
+    final xml.XmlText pwd = doc.findAllElements('password').first.firstChild;
+    pwd.text = password;
+    final buffer = StringBuffer();
+    doc.writePrettyTo(buffer, 0, &quot;  &quot;);
+    setting.writeAsStringSync(buffer.toString());
+  }
+  print('开始上传');
+  {
+    final configPath =
+        File('$projectDir/configs/mvn-settings.xml').absolute.path;
+    List&lt;String&gt; args = [
+      'deploy:deploy-file',
+      '-DpomFile=&quot;${deploy.pomFile.absolute.path}&quot;',
+      '-Dmaven.metadata.legacy=true',
+      '-DgeneratePom=false',
+      '-Dfile=&quot;${deploy.aarFile.absolute.path}&quot;',
+      '-Durl=&quot;${mavenUrl}&quot;',
+      '-DrepositoryId=&quot;nexus&quot;',
+      '-Dpackaging=aar',
+      '-s=&quot;$configPath&quot;',
+    ];
+    final shell = &quot;mvn ${args.join(' \\\n    ')}&quot;;
+    final f = File(
+        &quot;${Directory.systemTemp.path}/${DateTime.now().millisecondsSinceEpoch}.sh&quot;);
+    f.writeAsStringSync(shell);
+    final exitCode = await start('bash', [f.path]);
+    f.deleteSync();
+    if (exitCode != 0) {
+      print(deploy.aarFile.path.split('/').last + '上传失败');
+      return false;
+    } else {
+      print(deploy.aarFile.path.split('/').last + '上传成功');
+    }
+  }
+  temp.deleteSync();
+  return true;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br><span class="line-number">69</span><br><span class="line-number">70</span><br><span class="line-number">71</span><br><span class="line-number">72</span><br><span class="line-number">73</span><br><span class="line-number">74</span><br><span class="line-number">75</span><br><span class="line-number">76</span><br><span class="line-number">77</span><br><span class="line-number">78</span><br><span class="line-number">79</span><br><span class="line-number">80</span><br><span class="line-number">81</span><br><span class="line-number">82</span><br><span class="line-number">83</span><br><span class="line-number">84</span><br><span class="line-number">85</span><br><span class="line-number">86</span><br><span class="line-number">87</span><br><span class="line-number">88</span><br><span class="line-number">89</span><br><span class="line-number">90</span><br><span class="line-number">91</span><br><span class="line-number">92</span><br><span class="line-number">93</span><br><span class="line-number">94</span><br><span class="line-number">95</span><br><span class="line-number">96</span><br></div></div><p>其中的<code>build.pom</code>文件可以点击<a href="https://github.com/xuzhongpeng/flutter_build/blob/master/configs/build.pom" target="_blank" rel="noopener noreferrer">这里<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>看到，主要功能是管理 aar 版本号及存放 flutter 相关的库，这里这些库我是执行<code>flutter build aar</code>拿到的，目前我这个版本生成的都是这几个文件。</p> <p>我是通过 mvn 命令上传到 maven 的，所以需要安装 mvn 命令去<a href="http://maven.apache.org/download.cgi" target="_blank" rel="noopener noreferrer">官网<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>安装</p> <p>最后上传到 maven 仓库后是这样
+<img src="https://blog-1253495453.cos.ap-chongqing.myqcloud.com/build_android/maven_version_20200526.png" alt=""></p> <p>全部代码请移步<a href="https://github.com/xuzhongpeng/flutter_build" target="_blank" rel="noopener noreferrer">flutter_build<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <h2 id="目前问题"><a href="#目前问题" aria-hidden="true" class="header-anchor">#</a> 目前问题</h2> <ol><li>我不清楚是否 flutter 的资源名后缀能否自动获取，目前是写死的，比如<code>1.0.0-af51afceb8886cc11e25047523c4e0c7e1f5d408</code></li> <li>fat-aar 能否把 flutter 资源下载后打入到一个 aar 中</li></ol> <h2 id="总结"><a href="#总结" aria-hidden="true" class="header-anchor">#</a> 总结</h2> <p>由于对 gradle 还不是很熟悉，还不清楚是否有更好的打包及集成方式，希望能得到大家提醒，我也能够改进打包脚本</p></div> <footer class="page-edit" data-v-8958e280><!----> <div class="last-updated" data-v-8958e280><span class="prefix" data-v-8958e280>Last Updated:</span> <span class="time" data-v-8958e280>8/12/2020, 1:34:59 PM</span></div></footer> <!----> <div id="gitalk-container" data-v-8958e280></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.f735c987.js" defer></script><script src="/assets/js/4.1b5f1a26.js" defer></script><script src="/assets/js/3.7354cf96.js" defer></script><script src="/assets/js/45.2c5e635b.js" defer></script>
+  </body>
+</html>

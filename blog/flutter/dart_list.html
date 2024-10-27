@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>dart的中的List属性与方法 | 幺风</title>
+    <meta name="description" content="">
+    
+    
+    <link rel="preload" href="/assets/css/0.styles.da10bf32.css" as="style"><link rel="preload" href="/assets/js/app.f735c987.js" as="script"><link rel="preload" href="/assets/js/4.1b5f1a26.js" as="script"><link rel="preload" href="/assets/js/3.7354cf96.js" as="script"><link rel="preload" href="/assets/js/42.93650a8e.js" as="script"><link rel="prefetch" href="/assets/js/1.91feba10.js"><link rel="prefetch" href="/assets/js/10.c31bcc1b.js"><link rel="prefetch" href="/assets/js/11.642edadc.js"><link rel="prefetch" href="/assets/js/12.e9bb10d9.js"><link rel="prefetch" href="/assets/js/13.bdd95be6.js"><link rel="prefetch" href="/assets/js/14.b6c81b34.js"><link rel="prefetch" href="/assets/js/15.b5139249.js"><link rel="prefetch" href="/assets/js/16.1ade8e0c.js"><link rel="prefetch" href="/assets/js/17.f0b30fb5.js"><link rel="prefetch" href="/assets/js/18.1c883b67.js"><link rel="prefetch" href="/assets/js/19.3e639663.js"><link rel="prefetch" href="/assets/js/20.74962acf.js"><link rel="prefetch" href="/assets/js/21.f837615d.js"><link rel="prefetch" href="/assets/js/22.933fde40.js"><link rel="prefetch" href="/assets/js/23.9334c5ee.js"><link rel="prefetch" href="/assets/js/24.ef408fc2.js"><link rel="prefetch" href="/assets/js/25.f9800b90.js"><link rel="prefetch" href="/assets/js/26.f56ce7bf.js"><link rel="prefetch" href="/assets/js/27.267e0efb.js"><link rel="prefetch" href="/assets/js/28.1aafaa74.js"><link rel="prefetch" href="/assets/js/29.bf71bb2d.js"><link rel="prefetch" href="/assets/js/30.65608550.js"><link rel="prefetch" href="/assets/js/31.c5de1bf4.js"><link rel="prefetch" href="/assets/js/32.43ee74a8.js"><link rel="prefetch" href="/assets/js/33.1efff8a5.js"><link rel="prefetch" href="/assets/js/34.89d049a4.js"><link rel="prefetch" href="/assets/js/35.6b5e7256.js"><link rel="prefetch" href="/assets/js/36.1be005db.js"><link rel="prefetch" href="/assets/js/37.db62ff97.js"><link rel="prefetch" href="/assets/js/38.5cf11128.js"><link rel="prefetch" href="/assets/js/39.fa355553.js"><link rel="prefetch" href="/assets/js/40.7490c5e3.js"><link rel="prefetch" href="/assets/js/41.4e813bfa.js"><link rel="prefetch" href="/assets/js/43.9f1ac82d.js"><link rel="prefetch" href="/assets/js/44.bd781139.js"><link rel="prefetch" href="/assets/js/45.2c5e635b.js"><link rel="prefetch" href="/assets/js/46.50f53b28.js"><link rel="prefetch" href="/assets/js/47.5478a007.js"><link rel="prefetch" href="/assets/js/48.ec71092b.js"><link rel="prefetch" href="/assets/js/49.f17a1618.js"><link rel="prefetch" href="/assets/js/5.4c86b808.js"><link rel="prefetch" href="/assets/js/50.b1e9909e.js"><link rel="prefetch" href="/assets/js/51.777f406a.js"><link rel="prefetch" href="/assets/js/52.f3a47314.js"><link rel="prefetch" href="/assets/js/53.8bda39e8.js"><link rel="prefetch" href="/assets/js/54.6bdd66b2.js"><link rel="prefetch" href="/assets/js/55.d3af29b9.js"><link rel="prefetch" href="/assets/js/56.5e98aed3.js"><link rel="prefetch" href="/assets/js/57.8fac4797.js"><link rel="prefetch" href="/assets/js/58.1f764b7f.js"><link rel="prefetch" href="/assets/js/59.cd677a6a.js"><link rel="prefetch" href="/assets/js/6.d79a3977.js"><link rel="prefetch" href="/assets/js/60.83d74725.js"><link rel="prefetch" href="/assets/js/61.e61ccd9b.js"><link rel="prefetch" href="/assets/js/62.444cc809.js"><link rel="prefetch" href="/assets/js/63.157bbc00.js"><link rel="prefetch" href="/assets/js/64.2ec80c70.js"><link rel="prefetch" href="/assets/js/65.d35a0001.js"><link rel="prefetch" href="/assets/js/66.6f92e582.js"><link rel="prefetch" href="/assets/js/67.9d51e14d.js"><link rel="prefetch" href="/assets/js/68.5675c3e2.js"><link rel="prefetch" href="/assets/js/69.e536d7ac.js"><link rel="prefetch" href="/assets/js/7.0dcc7463.js"><link rel="prefetch" href="/assets/js/70.e187963b.js"><link rel="prefetch" href="/assets/js/71.09bda95d.js"><link rel="prefetch" href="/assets/js/72.aefd789f.js"><link rel="prefetch" href="/assets/js/73.20936a8d.js"><link rel="prefetch" href="/assets/js/74.d17921e6.js"><link rel="prefetch" href="/assets/js/75.0ff9c5e9.js"><link rel="prefetch" href="/assets/js/76.479d210c.js"><link rel="prefetch" href="/assets/js/77.c5443f0d.js"><link rel="prefetch" href="/assets/js/78.666b2fe9.js"><link rel="prefetch" href="/assets/js/79.949a1f44.js"><link rel="prefetch" href="/assets/js/8.67e8e6f2.js"><link rel="prefetch" href="/assets/js/9.70c87633.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.da10bf32.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container reform"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/images/logo.png" alt="幺风" class="logo"> <span class="site-name can-hide">幺风</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link"><span class="reform-jia" style="font-size:1rem;"></span>
+主页</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="reform-zhi"></span> <span class="title">博文</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/frontend/" class="nav-link"><!---->
+前端</a></li><li class="dropdown-item"><!----> <a href="/blog/flutter/" class="nav-link router-link-active"><!---->
+Flutter</a></li><li class="dropdown-item"><!----> <a href="/blog/coding/" class="nav-link"><!---->
+学习思考</a></li><li class="dropdown-item"><!----> <a href="/blog/algorithm/" class="nav-link"><!---->
+算法与数据结构</a></li><li class="dropdown-item"><!----> <a href="/blog/reading/" class="nav-link"><!---->
+阅读笔记</a></li><li class="dropdown-item"><!----> <a href="/blog/reflection/" class="nav-link"><!---->
+思考</a></li><li class="dropdown-item"><!----> <a href="/blog/canvas/" class="nav-link"><!---->
+渲染相关</a></li><li class="dropdown-item"><!----> <a href="/blog/gesture/" class="nav-link"><!---->
+事件相关</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="reform-shuben"></span> <span class="title">文档</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/document/vuepress-theme-reform.html" class="nav-link"><!---->
+vuepress-theme-reform</a></li><li class="dropdown-item"><!----> <a href="/document/弹幕插件文档.html" class="nav-link"><!---->
+弹幕插件文档</a></li></ul></div></div><div class="nav-item"><a href="/tags/" class="nav-link"><!---->
+标签云</a></div><div class="nav-item"><a href="/about/" class="nav-link"><!---->
+关于我</a></div> <a href="https://github.com/xuzhongpeng" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link"><span class="reform-jia" style="font-size:1rem;"></span>
+主页</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="reform-zhi"></span> <span class="title">博文</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/frontend/" class="nav-link"><!---->
+前端</a></li><li class="dropdown-item"><!----> <a href="/blog/flutter/" class="nav-link router-link-active"><!---->
+Flutter</a></li><li class="dropdown-item"><!----> <a href="/blog/coding/" class="nav-link"><!---->
+学习思考</a></li><li class="dropdown-item"><!----> <a href="/blog/algorithm/" class="nav-link"><!---->
+算法与数据结构</a></li><li class="dropdown-item"><!----> <a href="/blog/reading/" class="nav-link"><!---->
+阅读笔记</a></li><li class="dropdown-item"><!----> <a href="/blog/reflection/" class="nav-link"><!---->
+思考</a></li><li class="dropdown-item"><!----> <a href="/blog/canvas/" class="nav-link"><!---->
+渲染相关</a></li><li class="dropdown-item"><!----> <a href="/blog/gesture/" class="nav-link"><!---->
+事件相关</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="reform-shuben"></span> <span class="title">文档</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/document/vuepress-theme-reform.html" class="nav-link"><!---->
+vuepress-theme-reform</a></li><li class="dropdown-item"><!----> <a href="/document/弹幕插件文档.html" class="nav-link"><!---->
+弹幕插件文档</a></li></ul></div></div><div class="nav-item"><a href="/tags/" class="nav-link"><!---->
+标签云</a></div><div class="nav-item"><a href="/about/" class="nav-link"><!---->
+关于我</a></div> <a href="https://github.com/xuzhongpeng" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>dart的中的List属性与方法</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/flutter/dart_list.html#list" class="sidebar-link">List</a><ul class="sidebar-sub-headers"></ul></li></ul></section></li></ul> </aside> <main class="page" data-v-8958e280> <section class="tags" data-v-8958e280><span class="tagPopup" data-v-8958e280><a href="/tags/?tag=Flutter" class="tag" data-v-8958e280>Flutter</a></span><span class="tagPopup" data-v-8958e280><a href="/tags/?tag=Dart" class="tag" data-v-8958e280>Dart</a></span></section> <div class="content theme-default-content content__default" data-v-8958e280><h2 id="list"><a href="#list" aria-hidden="true" class="header-anchor">#</a> List</h2> <ul><li>List([int length]) 创建一个空数组或者 length 长度的数组</li> <li>List.filled(int length,E fill,{bool growable:false}) 创建一个 list，每个元素共享相同的值，growable 表示是 list 长度是否可变，默认 false 固定长度</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>List a = new List.filled(10, 1);
+print(a);//[1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><ul><li>List.from(iterable elements,{bool growable:true})</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>List a = new List.from([1, &quot;2&quot;, 3, 4]);
+print(a);//[1, 2, 3, 4]
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><ul><li>List.generate(int length, E generator(int index) 创建一个元素，每个位置创建一个新对象</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>&lt;!-- more --&gt;
+List a = new List.generate(10, (value) =&gt; value + 1);
+print(a);//[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><ul><li>List.unmodifiable(Iterable elements) 创建一个不可修改的 List</li> <li>first List 中第一个元素</li> <li>last List 中最后一个元素</li> <li>length List 的长度</li> <li>reversed 返回翻转 List 后的值，不改变原 List</li> <li>add() 向数组中添加一个元素</li> <li>addAll() 向数组中添加一个带有 Iterable 接口的类</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>List a = new List.from([1, &quot;2&quot;, 3, 4]);
+a.addAll([5, 6]);
+print(a);// [1, 2, 3, 4, 5, 6]
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><ul><li>asMap() 返回一个不可修改的 Map,keys 为 List 顺序</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>List a = new List.from([1, &quot;2&quot;, 3, 4]);
+Map b = a.asMap();
+print(b);
+print(a);
+CONSOLE:
+{0: 1, 1: 2, 2: 3, 3: 4}
+[1, 2, 3, 4]
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><ul><li>cast<R>() 如果 List 中所有类型满足 R,正常工作并返回 List，如果有一个不满足，将会抛出错误</R></li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code> List a = new List.from([1,&quot;2&quot;, 3, 4]);
+print(a.cast&lt;int&gt;());//抛出错误：type 'String' is not a subtype of type 'int' in type cas
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><ul><li>clear() 删除所有元素</li> <li>fillRange(int start,int end,[E fillValue]) 在选择的范围插入一个新的元素</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>List a = [1, 2, 3, 4];
+a.fillRange(1, 3, 'test');
+print(a);//[1, test, test, 4]
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><ul><li>getRange(int start,int end) 返回一个从 start 到 end 的 Iterable</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>List a = [1, 2, 3, 4];
+print(a.getRange(1, 3));//(2, 3)
+print(a);//[1, 2, 3, 4]
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><ul><li>indexOf() 找到第一个满足条件的下标</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>List a = [1, 2, 3, 4];
+print(a.indexOf(3));//2
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><ul><li>indexWhere(bool test(E element),[int start=0]) 迭代 list，返回第一个满足条件的下标</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code> List a = [1, 2, 3, 4];
+print(a.indexWhere((value) =&gt; value % 2 == 0));//1
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><ul><li>insert(int index,E element) 在 index 处插入一个元素</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>List a = [1, 2, 3, 4];
+a.insert(2, 'jsshou');
+print(a);//[1,2,jsshou,3,4]
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><ul><li>insertAll(int index,iterable<E> iterable) 在 index 处插入一个数组</E></li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>List a = [1, 2, 3, 4];
+a.insertAll(2, ['jsshou', 'good']);
+print(a);//[1, 2, [jsshou, good], 3, 4]
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><ul><li>lastIndexOf(E element, [ int start ]) 类似 indexOf，迭代从后往前</li> <li>lastIndexWhere(bool test(E element), [ int start ]) 类似 indexWhere，迭代从后往前</li> <li>remove(Object value) 删除第一个匹配到的 value</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>List a = [1, 2, 3, 4, 3];
+a.remove(3);
+print(a);// [1,2,4,3]
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><ul><li>removeAt(int index) 删除 index 处的数据</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>List a = [1, 2, 3, 4, 3];
+a.removeAt(3);
+print(a);//[1, 2, 3, 3]
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><ul><li>removeLast() 删除最后一个数据</li> <li>removeRange(int start,int end) 删除 start 到 end 处的数据</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>List a = [1, 2, 3, 4, 3];
+a.removeRange(2, 3);
+print(a);//[1,2,4,3]
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><ul><li>removeWhere() 迭代数据，删除回调中返回 true 的数据</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>List a = [1, 2, 3, 4, 3];
+a.removeWhere((value) =&gt; value % 2 == 0);
+print(a);//[1,3,3]
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><ul><li>replaceRange(int start,int end,iterable<E> replacement) 删除 start 到 end 的数据插入 replacement</E></li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>List a = [1, 2, 3, 4, 3];
+a.replaceRange(2, 4, [10, 11, 12, 13]);
+print(a);//[1, 2, 10, 11, 12, 13, 3]
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><ul><li>retainWhere(bool test(E element)) 删除不满足条件的数据</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>List a = [1, 2, 3, 4, 3];
+a.retainWhere((value) =&gt; value % 2 == 0);
+print(a);//[2, 4]
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><ul><li>setAll(int index,iterable<E> iterable) 从 index 开始插入一个 iterable 数据（对比 insertAll)</E></li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>List a = [1, 2, 3, 4, 5];
+a.setAll(2, ['jsshou', 'good']);
+print(a); //[1, 2, jsshou, good, 5]
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p>它与 insertAll 的区别是 insertAll 不会删除原数组的值，setAll 会删除插入处一个或多个值</p> <ul><li>setRange(int start,int end,Iterable<E> iterable,[int skipCount=0]) 从原数组 start 处开始到 end 结束替换一个 iterable，可选参数 skipCount 表示从 iterable 第 skipCount 处开始复制</E></li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>List&lt;int&gt; list1 = [1, 2, 3, 4];
+List&lt;int&gt; list2 = [5, 6, 7, 8, 9];
+list1.setRange(1, 3, list2, 2);
+print(list1.join(', ')); // 1, 7, 8, 4
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><ul><li>shuffle([Random random]) 随机排列 list</li> <li>sort(int compare(E a,E b)) 排序,类似 js 中的 sort</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>List&lt;int&gt; list = [1, 2, 3, 4, 9, 8, 7, 6];
+list.sort((a, b) =&gt; a - b);
+print(list);//[1, 2, 3, 4, 6, 7, 8, 9]
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><ul><li>sublist(int start,[int end]) 提取 list 数据</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>List&lt;int&gt; list = [1, 2, 3, 4, 9, 8, 7, 6];
+print(list.sublist(2, 5));
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><ul><li>contains(Object element) 比较原数组中是否包含 element</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>List&lt;int&gt; list = [1, 2, 3, 4];
+List&lt;int&gt; list2 = [1, 2, 3, 4];
+print(list.contains(1));//true
+print(list2.contains(5));//false
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><ul><li>elementAt(int index) 返回 index 处的数据</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>List&lt;int&gt; list = [1, 2, 3, 4];
+print(list.elementAt(2));//3
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><ul><li>every(bool test(E element)) list 每一项是否满足条件</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>List&lt;int&gt; list = [1, 2, 3, 4];
+List&lt;int&gt; list1 = [0, 2, 4, 6];
+print(list.every((item) =&gt; item % 2 == 0));//false
+print(list1.every((item) =&gt; item % 2 == 0));//true
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><ul><li>expand(Iterable<T> f(E element)) 展开 list (类似 js 中的 flat)</T></li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>var pairs = [[1, 2], [3, 4]];
+var flattened = pairs.expand((pair) =&gt; pair).toList();
+print(flattened); // =&gt; [1, 2, 3, 4];
+
+var input = [1, 2, 3];
+var duplicated = input.expand((i) =&gt; [i, i]).toList();
+print(duplicated); // =&gt; [1, 1, 2, 2, 3, 3]
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><ul><li>firstWhere(bool test(E element),{E orElse()}) 迭代元素返回第一个满足 test，如果没有，返回 orElse 调用结果</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>var list = [1, 2, 2, 4];
+var res = list.firstWhere((pair) =&gt; pair == 2);
+print(res);//2
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><ul><li>fold<T>(T initialValue,T combine(T previousValue,E element)) 把 initialValue 作为初始值，迭代原数组，返回新的 value，类似 js 中的 reduce，eg:</T></li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>var value = initialValue;
+for (E element in this) {
+  value = combine(value, element);
+}
+return value;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><ul><li>followedBy(iterable<E> other) 将 other 数据添加到原数组，返回 Iterable 类型</E></li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>List a = new List.from([1, 2, 3, 4]);
+Iterable b = a.followedBy([1, 2, 3]);
+print(b);//(1, 2, 3, 4, 1, 2, 3)
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><ul><li>forEach(void f(E element)) 迭代数组</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>List list = [1, 2, 3, 4];
+list.forEach((item) {
+    print(item);
+});
+//1,2,3,4
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><ul><li>join([String separator='']) 把数组转成字符串中间用 separator 隔开</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>var list = [1, 2, 2, 4];
+var res = list.join('*');
+print(res);//1*2*3*4
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><ul><li>lastWhere(bool test(E element),{E orElse})</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>var list = [1, 2, 2, 4];
+var res = list.lastWhere((pair) =&gt; pair == 2);
+print(res);//3
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><ul><li>map<T>(T f(E e)) 迭代数组并返回一个新的数组，新数组长度跟原数组长度一样</T></li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>var list = [1, 2, 2, 4];
+var res = list.map((pair) =&gt; pair * 2);
+print(res);//(2, 4, 4, 8)
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><ul><li>noSuchMethod(Invocation invocation) 访问不存在的方法或属性调用</li> <li>reduce(E combine(E value,E element)) value 为初始值为原始数组第一项，后面是 combine 返回的项</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>List a = new List.from([1, 2, 3, 4]);
+var b = a.reduce((a, b) {
+  print(a.toString() + ',' + b.toString());
+  return a + b;
+});
+print(b);
+//1,2
+//3,3
+//6,4
+//10
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br></div></div><ul><li>singleWhere(bool test(E element),{E orElse()}) 检查元素以查看是否 test(element)返回 true。如果只满足一个元素 test，则返回该元素。如果找到多个匹配元素，则抛出 StateError。如果未找到匹配元素，则返回结果 orElse。如果 orElse 省略，则默认为抛出 StateError</li> <li>skip(int count) 返回原数组 count 后面的元素</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code> List a = new List.from([1, 2, 3, 4]);
+print(a.skip(2));//(3, 4)  //返回Iterable类型
+print(a);//[1, 2, 3, 4]
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><ul><li>skipWhile(bool test(E value))</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>List a = new List.from([1, 2, 3, 4]);
+print(a.skipWhile((value) {
+  print(value);
+  if (value == 3) {
+    return false;
+  }
+  return true;
+}));
+print(a);
+输出:
+1
+2
+3
+(3, 4)
+[1, 2, 3, 4]
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br></div></div><ul><li>take(int count)</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>List a = new List.from([1, 2, 3, 4]);
+print(a.take(2));//(1,2)
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><ul><li>takeWhile(bool test(E value)) 遍历迭代器，直到找到 test 返回为 false 的元素，停止遍历返回找到的 iterable</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>List a = new List.from([1, 2, 3, 4]);
+print(a.takeWhile((value) =&gt; value != 2));
+//(1)
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><ul><li>toList({bool growable:true}) 将 Iterable 类转为 List</li> <li>toSet() 将 Iterable 类及其子类转为 Set</li> <li>toString()</li> <li>where(bool test(E element)) 遍历元素，返回所有满足条件的元素,类似 js 中的 filter</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>List a = new List.from([1, 2, 3, 4]);
+print(a.where((value) =&gt; value != 2));//（1，3，4）
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><ul><li>whereType<T>() 找到原 list 中带有 T 类型的元素</T></li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>List a = new List.from([1, &quot;2&quot;, 3, 4]);
+print(a.whereType&lt;String&gt;());//(2)
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div></div> <footer class="page-edit" data-v-8958e280><!----> <div class="last-updated" data-v-8958e280><span class="prefix" data-v-8958e280>Last Updated:</span> <span class="time" data-v-8958e280>8/12/2020, 1:34:59 PM</span></div></footer> <!----> <div id="gitalk-container" data-v-8958e280></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.f735c987.js" defer></script><script src="/assets/js/4.1b5f1a26.js" defer></script><script src="/assets/js/3.7354cf96.js" defer></script><script src="/assets/js/42.93650a8e.js" defer></script>
+  </body>
+</html>

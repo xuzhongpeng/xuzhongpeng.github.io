@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>flutter使用charts库定义图表 | 幺风</title>
+    <meta name="description" content="">
+    
+    
+    <link rel="preload" href="/assets/css/0.styles.da10bf32.css" as="style"><link rel="preload" href="/assets/js/app.f735c987.js" as="script"><link rel="preload" href="/assets/js/4.1b5f1a26.js" as="script"><link rel="preload" href="/assets/js/3.7354cf96.js" as="script"><link rel="preload" href="/assets/js/46.50f53b28.js" as="script"><link rel="prefetch" href="/assets/js/1.91feba10.js"><link rel="prefetch" href="/assets/js/10.c31bcc1b.js"><link rel="prefetch" href="/assets/js/11.642edadc.js"><link rel="prefetch" href="/assets/js/12.e9bb10d9.js"><link rel="prefetch" href="/assets/js/13.bdd95be6.js"><link rel="prefetch" href="/assets/js/14.b6c81b34.js"><link rel="prefetch" href="/assets/js/15.b5139249.js"><link rel="prefetch" href="/assets/js/16.1ade8e0c.js"><link rel="prefetch" href="/assets/js/17.f0b30fb5.js"><link rel="prefetch" href="/assets/js/18.1c883b67.js"><link rel="prefetch" href="/assets/js/19.3e639663.js"><link rel="prefetch" href="/assets/js/20.74962acf.js"><link rel="prefetch" href="/assets/js/21.f837615d.js"><link rel="prefetch" href="/assets/js/22.933fde40.js"><link rel="prefetch" href="/assets/js/23.9334c5ee.js"><link rel="prefetch" href="/assets/js/24.ef408fc2.js"><link rel="prefetch" href="/assets/js/25.f9800b90.js"><link rel="prefetch" href="/assets/js/26.f56ce7bf.js"><link rel="prefetch" href="/assets/js/27.267e0efb.js"><link rel="prefetch" href="/assets/js/28.1aafaa74.js"><link rel="prefetch" href="/assets/js/29.bf71bb2d.js"><link rel="prefetch" href="/assets/js/30.65608550.js"><link rel="prefetch" href="/assets/js/31.c5de1bf4.js"><link rel="prefetch" href="/assets/js/32.43ee74a8.js"><link rel="prefetch" href="/assets/js/33.1efff8a5.js"><link rel="prefetch" href="/assets/js/34.89d049a4.js"><link rel="prefetch" href="/assets/js/35.6b5e7256.js"><link rel="prefetch" href="/assets/js/36.1be005db.js"><link rel="prefetch" href="/assets/js/37.db62ff97.js"><link rel="prefetch" href="/assets/js/38.5cf11128.js"><link rel="prefetch" href="/assets/js/39.fa355553.js"><link rel="prefetch" href="/assets/js/40.7490c5e3.js"><link rel="prefetch" href="/assets/js/41.4e813bfa.js"><link rel="prefetch" href="/assets/js/42.93650a8e.js"><link rel="prefetch" href="/assets/js/43.9f1ac82d.js"><link rel="prefetch" href="/assets/js/44.bd781139.js"><link rel="prefetch" href="/assets/js/45.2c5e635b.js"><link rel="prefetch" href="/assets/js/47.5478a007.js"><link rel="prefetch" href="/assets/js/48.ec71092b.js"><link rel="prefetch" href="/assets/js/49.f17a1618.js"><link rel="prefetch" href="/assets/js/5.4c86b808.js"><link rel="prefetch" href="/assets/js/50.b1e9909e.js"><link rel="prefetch" href="/assets/js/51.777f406a.js"><link rel="prefetch" href="/assets/js/52.f3a47314.js"><link rel="prefetch" href="/assets/js/53.8bda39e8.js"><link rel="prefetch" href="/assets/js/54.6bdd66b2.js"><link rel="prefetch" href="/assets/js/55.d3af29b9.js"><link rel="prefetch" href="/assets/js/56.5e98aed3.js"><link rel="prefetch" href="/assets/js/57.8fac4797.js"><link rel="prefetch" href="/assets/js/58.1f764b7f.js"><link rel="prefetch" href="/assets/js/59.cd677a6a.js"><link rel="prefetch" href="/assets/js/6.d79a3977.js"><link rel="prefetch" href="/assets/js/60.83d74725.js"><link rel="prefetch" href="/assets/js/61.e61ccd9b.js"><link rel="prefetch" href="/assets/js/62.444cc809.js"><link rel="prefetch" href="/assets/js/63.157bbc00.js"><link rel="prefetch" href="/assets/js/64.2ec80c70.js"><link rel="prefetch" href="/assets/js/65.d35a0001.js"><link rel="prefetch" href="/assets/js/66.6f92e582.js"><link rel="prefetch" href="/assets/js/67.9d51e14d.js"><link rel="prefetch" href="/assets/js/68.5675c3e2.js"><link rel="prefetch" href="/assets/js/69.e536d7ac.js"><link rel="prefetch" href="/assets/js/7.0dcc7463.js"><link rel="prefetch" href="/assets/js/70.e187963b.js"><link rel="prefetch" href="/assets/js/71.09bda95d.js"><link rel="prefetch" href="/assets/js/72.aefd789f.js"><link rel="prefetch" href="/assets/js/73.20936a8d.js"><link rel="prefetch" href="/assets/js/74.d17921e6.js"><link rel="prefetch" href="/assets/js/75.0ff9c5e9.js"><link rel="prefetch" href="/assets/js/76.479d210c.js"><link rel="prefetch" href="/assets/js/77.c5443f0d.js"><link rel="prefetch" href="/assets/js/78.666b2fe9.js"><link rel="prefetch" href="/assets/js/79.949a1f44.js"><link rel="prefetch" href="/assets/js/8.67e8e6f2.js"><link rel="prefetch" href="/assets/js/9.70c87633.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.da10bf32.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container reform"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/images/logo.png" alt="幺风" class="logo"> <span class="site-name can-hide">幺风</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link"><span class="reform-jia" style="font-size:1rem;"></span>
+主页</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="reform-zhi"></span> <span class="title">博文</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/frontend/" class="nav-link"><!---->
+前端</a></li><li class="dropdown-item"><!----> <a href="/blog/flutter/" class="nav-link router-link-active"><!---->
+Flutter</a></li><li class="dropdown-item"><!----> <a href="/blog/coding/" class="nav-link"><!---->
+学习思考</a></li><li class="dropdown-item"><!----> <a href="/blog/algorithm/" class="nav-link"><!---->
+算法与数据结构</a></li><li class="dropdown-item"><!----> <a href="/blog/reading/" class="nav-link"><!---->
+阅读笔记</a></li><li class="dropdown-item"><!----> <a href="/blog/reflection/" class="nav-link"><!---->
+思考</a></li><li class="dropdown-item"><!----> <a href="/blog/canvas/" class="nav-link"><!---->
+渲染相关</a></li><li class="dropdown-item"><!----> <a href="/blog/gesture/" class="nav-link"><!---->
+事件相关</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="reform-shuben"></span> <span class="title">文档</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/document/vuepress-theme-reform.html" class="nav-link"><!---->
+vuepress-theme-reform</a></li><li class="dropdown-item"><!----> <a href="/document/弹幕插件文档.html" class="nav-link"><!---->
+弹幕插件文档</a></li></ul></div></div><div class="nav-item"><a href="/tags/" class="nav-link"><!---->
+标签云</a></div><div class="nav-item"><a href="/about/" class="nav-link"><!---->
+关于我</a></div> <a href="https://github.com/xuzhongpeng" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link"><span class="reform-jia" style="font-size:1rem;"></span>
+主页</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="reform-zhi"></span> <span class="title">博文</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/frontend/" class="nav-link"><!---->
+前端</a></li><li class="dropdown-item"><!----> <a href="/blog/flutter/" class="nav-link router-link-active"><!---->
+Flutter</a></li><li class="dropdown-item"><!----> <a href="/blog/coding/" class="nav-link"><!---->
+学习思考</a></li><li class="dropdown-item"><!----> <a href="/blog/algorithm/" class="nav-link"><!---->
+算法与数据结构</a></li><li class="dropdown-item"><!----> <a href="/blog/reading/" class="nav-link"><!---->
+阅读笔记</a></li><li class="dropdown-item"><!----> <a href="/blog/reflection/" class="nav-link"><!---->
+思考</a></li><li class="dropdown-item"><!----> <a href="/blog/canvas/" class="nav-link"><!---->
+渲染相关</a></li><li class="dropdown-item"><!----> <a href="/blog/gesture/" class="nav-link"><!---->
+事件相关</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="reform-shuben"></span> <span class="title">文档</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/document/vuepress-theme-reform.html" class="nav-link"><!---->
+vuepress-theme-reform</a></li><li class="dropdown-item"><!----> <a href="/document/弹幕插件文档.html" class="nav-link"><!---->
+弹幕插件文档</a></li></ul></div></div><div class="nav-item"><a href="/tags/" class="nav-link"><!---->
+标签云</a></div><div class="nav-item"><a href="/about/" class="nav-link"><!---->
+关于我</a></div> <a href="https://github.com/xuzhongpeng" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>flutter使用charts库定义图表</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/flutter/flutter_use_charts.html#前言" class="sidebar-link">前言</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/blog/flutter/flutter_use_charts.html#能力" class="sidebar-link">能力</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blog/flutter/flutter_use_charts.html#支持的图表类型" class="sidebar-link">支持的图表类型</a></li></ul></li><li><a href="/blog/flutter/flutter_use_charts.html#简单使用" class="sidebar-link">简单使用</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/blog/flutter/flutter_use_charts.html#自定义横坐标" class="sidebar-link">自定义横坐标</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/blog/flutter/flutter_use_charts.html#自定义纵坐标" class="sidebar-link">自定义纵坐标</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/blog/flutter/flutter_use_charts.html#定义点击信息显示" class="sidebar-link">定义点击信息显示</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/blog/flutter/flutter_use_charts.html#组件缺陷及解决方案" class="sidebar-link">组件缺陷及解决方案</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blog/flutter/flutter_use_charts.html#数据变化不刷新问题" class="sidebar-link">数据变化不刷新问题</a></li><li class="sidebar-sub-header"><a href="/blog/flutter/flutter_use_charts.html#点击报错" class="sidebar-link">点击报错</a></li></ul></li></ul></section></li></ul> </aside> <main class="page" data-v-8958e280> <section class="tags" data-v-8958e280><span class="tagPopup" data-v-8958e280><a href="/tags/?tag=Flutter" class="tag" data-v-8958e280>Flutter</a></span></section> <div class="content theme-default-content content__default" data-v-8958e280><h2 id="前言"><a href="#前言" aria-hidden="true" class="header-anchor">#</a> 前言</h2> <p>不管是 web 端还是移动端，图表都是用来统计数据必不可少的工具，当前 flutter 在移动端的能力也日渐凸显，用 flutter 写一些统计内容就不需要在 iOS 和 Android 分别去实现图表统计，这也避免了一些 iOS 和 Android 在图表显示的差异，让两端的表现更加统一。google 官方也给出了 flutter 图表的解决方案 chart_flutter，虽然它的能力目前还有些不足，但我相信以它的更新速度，以后会具有更多的功能也会更加稳定。</p> <h2 id="能力"><a href="#能力" aria-hidden="true" class="header-anchor">#</a> 能力</h2> <p>目前 charts_flutter 更新到了 0.6.0 版本，查看更新日志看<a href="https://pub.flutter-io.cn/packages/charts_flutter#-changelog-tab-" target="_blank" rel="noopener noreferrer">这里<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <h3 id="支持的图表类型"><a href="#支持的图表类型" aria-hidden="true" class="header-anchor">#</a> 支持的图表类型</h3> <p>当前 charts 库支持三种图表类型，每种类型都有几个配置选项</p> <ul><li><p>条形图，支持堆叠多个数据系列，水平展示，时间序列（以时间为横坐标展示,数据是根据时间的顺序变化）</p></li> <li><p>折线图，支持时间序列</p></li> <li><p>饼图</p> <p><img src="https://blog-1253495453.cos.ap-chongqing.myqcloud.com/charts1.png" alt="条形图与三个分组系列"> <img src="https://blog-1253495453.cos.ap-chongqing.myqcloud.com/charts2.png" alt="条形图与分组和堆积的条形图"> <img src="https://blog-1253495453.cos.ap-chongqing.myqcloud.com/charts3.png" alt="折线图"> <img src="https://blog-1253495453.cos.ap-chongqing.myqcloud.com/charts4.png" alt="饼图"></p></li></ul> <h2 id="简单使用"><a href="#简单使用" aria-hidden="true" class="header-anchor">#</a> 简单使用</h2> <p>先定位一下抽象的<a href="https://google.github.io/charts/flutter/gallery.html" target="_blank" rel="noopener noreferrer">文档<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <p>先打开<code>pubspec.yaml</code>文件，加入</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>flutter：
+    sdk：flutter
+  charts_flutter：^0.6.0
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p>现在运行 IDE 的功能来获取包，或使用 flutter packages get 从终端运行。</p> <p>用文档中最简单的例子做示例</p> <div class="language-dart line-numbers-mode"><pre class="language-dart"><code><span class="token comment">/// Bar chart example</span>
+<span class="token keyword">import</span> <span class="token string">'package:charts_flutter/flutter.dart'</span> <span class="token operator">as</span> charts<span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token string">'package:flutter/material.dart'</span><span class="token punctuation">;</span>
+<span class="token keyword">class</span> <span class="token class-name">SimpleBarChart</span> <span class="token keyword">extends</span> <span class="token class-name">StatelessWidget</span> <span class="token punctuation">{</span>
+  <span class="token keyword">final</span> List<span class="token operator">&lt;</span>charts<span class="token punctuation">.</span>Series<span class="token operator">&gt;</span> seriesList<span class="token punctuation">;</span>
+  <span class="token keyword">final</span> bool animate<span class="token punctuation">;</span>
+  <span class="token function">SimpleBarChart</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>seriesList<span class="token punctuation">,</span> <span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span>animate<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token comment">/// Creates a [BarChart] with sample data and no transition.</span>
+  <span class="token keyword">factory</span> SimpleBarChart<span class="token punctuation">.</span><span class="token function">withSampleData</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">SimpleBarChart</span><span class="token punctuation">(</span>
+      <span class="token function">_createSampleData</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+      <span class="token comment">// Disable animations for image tests.</span>
+      animate<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+    <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token metadata symbol">@override</span>
+  Widget <span class="token function">build</span><span class="token punctuation">(</span>BuildContext context<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">charts<span class="token punctuation">.</span>BarChart</span><span class="token punctuation">(</span>
+      seriesList<span class="token punctuation">,</span>
+      animate<span class="token punctuation">:</span> animate<span class="token punctuation">,</span>
+    <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token comment">/// Create one series with sample hard coded data.</span>
+  <span class="token keyword">static</span> List<span class="token operator">&lt;</span>charts<span class="token punctuation">.</span>Series<span class="token operator">&lt;</span>OrdinalSales<span class="token punctuation">,</span> String<span class="token operator">&gt;&gt;</span> <span class="token function">_createSampleData</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">final</span> data <span class="token operator">=</span> <span class="token punctuation">[</span>
+      <span class="token keyword">new</span> <span class="token class-name">OrdinalSales</span><span class="token punctuation">(</span><span class="token string">'2014'</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+      <span class="token keyword">new</span> <span class="token class-name">OrdinalSales</span><span class="token punctuation">(</span><span class="token string">'2015'</span><span class="token punctuation">,</span> <span class="token number">25</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+      <span class="token keyword">new</span> <span class="token class-name">OrdinalSales</span><span class="token punctuation">(</span><span class="token string">'2016'</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+      <span class="token keyword">new</span> <span class="token class-name">OrdinalSales</span><span class="token punctuation">(</span><span class="token string">'2017'</span><span class="token punctuation">,</span> <span class="token number">75</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token punctuation">[</span>
+      <span class="token keyword">new</span> <span class="token class-name">charts<span class="token punctuation">.</span>Series</span><span class="token operator">&lt;</span>OrdinalSales<span class="token punctuation">,</span> String<span class="token operator">&gt;</span><span class="token punctuation">(</span>
+        id<span class="token punctuation">:</span> <span class="token string">'Sales'</span><span class="token punctuation">,</span>
+        colorFn<span class="token punctuation">:</span> <span class="token punctuation">(</span>_<span class="token punctuation">,</span> __<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> charts<span class="token punctuation">.</span>MaterialPalette<span class="token punctuation">.</span>blue<span class="token punctuation">.</span>shadeDefault<span class="token punctuation">,</span>
+        domainFn<span class="token punctuation">:</span> <span class="token punctuation">(</span>OrdinalSales sales<span class="token punctuation">,</span> _<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> sales<span class="token punctuation">.</span>year<span class="token punctuation">,</span>
+        measureFn<span class="token punctuation">:</span> <span class="token punctuation">(</span>OrdinalSales sales<span class="token punctuation">,</span> _<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> sales<span class="token punctuation">.</span>sales<span class="token punctuation">,</span>
+        data<span class="token punctuation">:</span> data<span class="token punctuation">,</span>
+      <span class="token punctuation">)</span>
+    <span class="token punctuation">]</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token comment">/// Sample ordinal data type.</span>
+<span class="token keyword">class</span> <span class="token class-name">OrdinalSales</span> <span class="token punctuation">{</span>
+  <span class="token keyword">final</span> String year<span class="token punctuation">;</span>
+  <span class="token keyword">final</span> int sales<span class="token punctuation">;</span>
+
+  <span class="token function">OrdinalSales</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>year<span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>sales<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br></div></div><p>效果如下</p> <p><img src="https://google.github.io/charts/flutter/example/bar_charts/simple_full.png" alt="效果"></p> <p>简单讲解一下各个部分的作用</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>import 'package:charts_flutter/flutter.dart' as charts;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>引入 chart 包，as charts 是将 chart 包中的所有内容定义了一个命名空间，这样我们需要调用包中的内容只需要 charts.xxx 就可以了。</p> <p>先定义一个数据类用来支持图表的数据没块的类型</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>class OrdinalSales {
+  final String year;
+  final int sales;
+
+  OrdinalSales(this.year, this.sales);
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><p>这里如果是使用的时间序列，那么<code>final String year</code>就只能使用<code>final DateTime year</code></p> <p>然后使用<code>_createSampleData</code>方法把数据组装成 charts 支持的格式</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>static List&lt;charts.Series&lt;OrdinalSales, String&gt;&gt; _createSampleData() {
+    final data = [
+      new OrdinalSales('2014', 5),
+      new OrdinalSales('2015', 25),
+      new OrdinalSales('2016', 100),
+      new OrdinalSales('2017', 75),
+    ];
+
+    return [
+      new charts.Series&lt;OrdinalSales, String&gt;(
+        id: 'Sales',
+        colorFn: (_, __) =&gt; charts.MaterialPalette.blue.shadeDefault,
+        domainFn: (OrdinalSales sales, _) =&gt; sales.year,
+        measureFn: (OrdinalSales sales, _) =&gt; sales.sales,
+        data: data,
+      )
+    ];
+  }
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br></div></div><p>这里使用 static 的原因是前面调用它的地方是使用的 factory 关键字来定义，其它调用的地方就可以通过 SimpleBarChart.withSampleData()来完成组件调用，一般这个方法会传一个 datas 参数用来初始化从接口中获取的动态数据。这个方法返回一个 <code>List&lt;charts.Series&lt;OridinalSales,String&gt;&gt;</code>类型，
+其中 Series 类型的定义如下：</p> <ul><li><strong>id</strong>:单个数据系统的唯一标识符，用来呈现多个系列的图表</li> <li><strong>colorFn</strong>:用来定义当前数据的柱状图颜色</li> <li><strong>domain</strong>:表示需要观测的事物，比如'店铺'</li> <li><strong>measure</strong>:用来表示数据，比如'店铺的销售额'</li> <li><strong>data</strong>:数据源</li></ul> <p>接着就是定一个 build 方法用于渲染图表数据</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>@override
+Widget build(BuildContext context) {
+    return new charts.BarChart(
+      seriesList,
+      animate: animate,
+    );
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><p><code>charts.BarChart</code>就是定义一个普通的图表，其中定义图表的类还有<code>TimeSeriesChart</code>（根据时间为横坐标定义图表），<em>LineChart</em>（折线图），<em>OrdinalComboChart</em>，<em>PieChart</em>（饼状图），<code>ScatterPlotChart</code>等</p> <h2 id="自定义横坐标"><a href="#自定义横坐标" aria-hidden="true" class="header-anchor">#</a> 自定义横坐标</h2> <p>大多数情况数据表的横坐标数据可能只是一个 int 类型的数字或者一个从接口获取的英文参数，我们需要把它转化为有可读性的文字，下面是一个例子：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>Widget build(BuildContext context){
+    final ticks=new charts.StaticOrdinalTickProviderSpec([
+        new charts.TickSpec(
+            '2018',
+            label: '2018年',
+            style: new charts.TextStyleSpec(//可对x轴设置颜色等
+                color: new charts.Color(r: 0x4C, g: 0xAF, b: 0x50)))
+        ),
+         new charts.TickSpec(
+            '2019',
+            label: '2019年',
+            style: new charts.TextStyleSpec(//可对x轴设置颜色等
+                color: new charts.Color(r: 0x4C, g: 0xAF, b: 0x50)))
+        ),
+    ]);
+    return new charts.BarChart(
+      seriesList,
+      animate: animate,
+      domainAxis: new charts.OrdinalAxisSpec(
+        tickProviderSpec: ticks,
+      ),
+    );
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br></div></div><p>效果如下：</p> <p><img src="https://blog-1253495453.cos.ap-chongqing.myqcloud.com/chart_domain.png" alt=""></p> <p>对 BarChart 类传参 domainAxis,初始化一个 OrdinalAxisSpec 类(因为这里我使用的是 BarCharts 所以使用的是 OrdinalAxisSpec,如果是 TimeSeriesChart 那么需要使用 DateTimeAxisSpec)，TickSpec 中第一个参数是对应 <code>new OrdinalSales('2018', 5)</code>中的 2018，label 表示需要展示的数据，style 可用于定义横坐标字体大小颜色等</p> <h2 id="自定义纵坐标"><a href="#自定义纵坐标" aria-hidden="true" class="header-anchor">#</a> 自定义纵坐标</h2> <p>与自定义横坐标类似，纵坐标是通过 primaryMeasureAxis 来定义的，例如</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>...
+    return new charts.BarChart(
+      seriesList,
+      animate: animate,
+      domainAxis: new charts.OrdinalAxisSpec(
+        tickProviderSpec: ticks,
+      ),
+      primaryMeasureAxis:new charts.NumericAxisSpec(
+                tickFormatterSpec: new charts.BasicNumericTickFormatterSpec((value)=&gt;{
+                    '${value / 10000}万';
+                });
+      ),
+    );
+...
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br></div></div><p>BasicNumericTickFormatterSpec 会传一个回调函数，函数中的参数是 num 类型的原始数据，比如原来数据是 100000，那么会变成 10 万来展示。</p> <p>这种方式也可以用来定义横坐标。</p> <h2 id="定义点击信息显示"><a href="#定义点击信息显示" aria-hidden="true" class="header-anchor">#</a> 定义点击信息显示</h2> <p>如果我点击了一个图表上的一列，如何让它展示具体的数据呢，charts 提供了一个方式来获得点击的具体信息</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>...
+selectionModels: [
+    new charts.SelectionModelConfig(
+      type: charts.SelectionModelType.info,
+      changedListener: _onSelectionChanged,
+    )
+  ],
+...
+void _onSelectionChanged(charts.SelectionModel model){
+    ...
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br></div></div><p>其中 model 是点击后返回的一些信息，可通过 model.selectedDatum 获取到点击那条信息，具体要获取哪些通过打断点去查看其中的信息取自己需要的数据就行了。</p> <p>我自己定义了一个点击后显示的组件，有需要的自取：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>class ShowDetail extends StatelessWidget {
+  final String time;
+  final String type;
+  final double number;
+  final bool left;
+  ShowDetail({this.time, this.type, this.number, this.left = true});
+  @override
+  Widget build(BuildContext context) {
+    var style = TextStyle(color: Colors.white, fontSize: 10);
+    // var position = left ? {'left': 0} : {'right': -10};
+    return Positioned(
+      right: left ? null : -10,
+      left: left ? 50 : null,
+      child: Container(
+          width: 125,
+          // height: 35,
+          color: Color.fromRGBO(0, 0, 0, 0.7),
+          padding: EdgeInsets.all(4),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: &lt;Widget&gt;[
+              Text(
+                time,
+                style: style,
+              ),
+              Container(
+                width: 165,
+                height: 15,
+                child: Stack(
+                  children: [
+                    Positioned(
+                      child: new CustomPaint(
+                          size: new Size(13, 13), painter: new MyPainter()),
+                    ),
+                    Positioned(
+                        left: 10,
+                        child: Text(
+                          type,
+                          style: style,
+                        )),
+                    Positioned(
+                      right: 1,
+                      child: Text(
+                        number.toString(),
+                        style: style,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          )),
+    );
+  }
+}
+
+//小点点
+class MyPainter extends CustomPainter {
+  @override
+  void paint(Canvas canvas, Size size) {
+    Paint _paint = Paint()
+      ..colorFilter = ColorFilter.mode(
+          Color.fromARGB(243, 190, 35, 1), BlendMode.srcATop) //颜色渲染模式
+      ..filterQuality = FilterQuality.high; //颜色渲染模式的质量
+    canvas.drawCircle(new Offset(6, 8), 4, _paint);
+  }
+
+  @override
+  bool shouldRepaint(CustomPainter oldDelegate) {
+    return false;
+  }
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br><span class="line-number">69</span><br><span class="line-number">70</span><br><span class="line-number">71</span><br><span class="line-number">72</span><br></div></div><p>调用示例</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>
+ShowDetail(
+  time: clickTime,
+  type: type,
+  number: cost,
+  left: left,
+)
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><p>其中 time 表示横坐标内容，type 表示此图表类型，number 表示纵坐标内容，left 表示居左还是居右。这是根据我自己的业务写的，你们可以自行修改，完整代码可查看<a href="https://github.com/xuzhongpeng/draw_design/blob/master/lib/views/custom_linechart.dart" target="_blank" rel="noopener noreferrer">这里<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <p>效果:
+<img src="https://blog-1253495453.cos.ap-chongqing.myqcloud.com/chart_chilk.png" alt=""></p> <h2 id="组件缺陷及解决方案"><a href="#组件缺陷及解决方案" aria-hidden="true" class="header-anchor">#</a> 组件缺陷及解决方案</h2> <h3 id="数据变化不刷新问题"><a href="#数据变化不刷新问题" aria-hidden="true" class="header-anchor">#</a> 数据变化不刷新问题</h3> <p>给定义图表外部添加一个 Container 组件并添加 key 值。</p> <h3 id="点击报错"><a href="#点击报错" aria-hidden="true" class="header-anchor">#</a> 点击报错</h3> <p>问题：当我使用折线图的时候，点击折线图速度后使用 setState 会报错'_drawAreaBoundsOutdated == false': is not true.。</p> <p>解决：这算是 charts 库的缺陷，目前我也没找到很好的解决方案，下面方案能解决报错</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>Future.delayed(const Duration(milliseconds: 500), () {
+  setState((){
+    ...
+  })
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div></div> <footer class="page-edit" data-v-8958e280><!----> <div class="last-updated" data-v-8958e280><span class="prefix" data-v-8958e280>Last Updated:</span> <span class="time" data-v-8958e280>8/12/2020, 1:34:59 PM</span></div></footer> <!----> <div id="gitalk-container" data-v-8958e280></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.f735c987.js" defer></script><script src="/assets/js/4.1b5f1a26.js" defer></script><script src="/assets/js/3.7354cf96.js" defer></script><script src="/assets/js/46.50f53b28.js" defer></script>
+  </body>
+</html>

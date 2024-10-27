@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>iOS集成flutter及flutter_boost | 幺风</title>
+    <meta name="description" content="">
+    
+    
+    <link rel="preload" href="/assets/css/0.styles.da10bf32.css" as="style"><link rel="preload" href="/assets/js/app.f735c987.js" as="script"><link rel="preload" href="/assets/js/4.1b5f1a26.js" as="script"><link rel="preload" href="/assets/js/3.7354cf96.js" as="script"><link rel="preload" href="/assets/js/47.5478a007.js" as="script"><link rel="prefetch" href="/assets/js/1.91feba10.js"><link rel="prefetch" href="/assets/js/10.c31bcc1b.js"><link rel="prefetch" href="/assets/js/11.642edadc.js"><link rel="prefetch" href="/assets/js/12.e9bb10d9.js"><link rel="prefetch" href="/assets/js/13.bdd95be6.js"><link rel="prefetch" href="/assets/js/14.b6c81b34.js"><link rel="prefetch" href="/assets/js/15.b5139249.js"><link rel="prefetch" href="/assets/js/16.1ade8e0c.js"><link rel="prefetch" href="/assets/js/17.f0b30fb5.js"><link rel="prefetch" href="/assets/js/18.1c883b67.js"><link rel="prefetch" href="/assets/js/19.3e639663.js"><link rel="prefetch" href="/assets/js/20.74962acf.js"><link rel="prefetch" href="/assets/js/21.f837615d.js"><link rel="prefetch" href="/assets/js/22.933fde40.js"><link rel="prefetch" href="/assets/js/23.9334c5ee.js"><link rel="prefetch" href="/assets/js/24.ef408fc2.js"><link rel="prefetch" href="/assets/js/25.f9800b90.js"><link rel="prefetch" href="/assets/js/26.f56ce7bf.js"><link rel="prefetch" href="/assets/js/27.267e0efb.js"><link rel="prefetch" href="/assets/js/28.1aafaa74.js"><link rel="prefetch" href="/assets/js/29.bf71bb2d.js"><link rel="prefetch" href="/assets/js/30.65608550.js"><link rel="prefetch" href="/assets/js/31.c5de1bf4.js"><link rel="prefetch" href="/assets/js/32.43ee74a8.js"><link rel="prefetch" href="/assets/js/33.1efff8a5.js"><link rel="prefetch" href="/assets/js/34.89d049a4.js"><link rel="prefetch" href="/assets/js/35.6b5e7256.js"><link rel="prefetch" href="/assets/js/36.1be005db.js"><link rel="prefetch" href="/assets/js/37.db62ff97.js"><link rel="prefetch" href="/assets/js/38.5cf11128.js"><link rel="prefetch" href="/assets/js/39.fa355553.js"><link rel="prefetch" href="/assets/js/40.7490c5e3.js"><link rel="prefetch" href="/assets/js/41.4e813bfa.js"><link rel="prefetch" href="/assets/js/42.93650a8e.js"><link rel="prefetch" href="/assets/js/43.9f1ac82d.js"><link rel="prefetch" href="/assets/js/44.bd781139.js"><link rel="prefetch" href="/assets/js/45.2c5e635b.js"><link rel="prefetch" href="/assets/js/46.50f53b28.js"><link rel="prefetch" href="/assets/js/48.ec71092b.js"><link rel="prefetch" href="/assets/js/49.f17a1618.js"><link rel="prefetch" href="/assets/js/5.4c86b808.js"><link rel="prefetch" href="/assets/js/50.b1e9909e.js"><link rel="prefetch" href="/assets/js/51.777f406a.js"><link rel="prefetch" href="/assets/js/52.f3a47314.js"><link rel="prefetch" href="/assets/js/53.8bda39e8.js"><link rel="prefetch" href="/assets/js/54.6bdd66b2.js"><link rel="prefetch" href="/assets/js/55.d3af29b9.js"><link rel="prefetch" href="/assets/js/56.5e98aed3.js"><link rel="prefetch" href="/assets/js/57.8fac4797.js"><link rel="prefetch" href="/assets/js/58.1f764b7f.js"><link rel="prefetch" href="/assets/js/59.cd677a6a.js"><link rel="prefetch" href="/assets/js/6.d79a3977.js"><link rel="prefetch" href="/assets/js/60.83d74725.js"><link rel="prefetch" href="/assets/js/61.e61ccd9b.js"><link rel="prefetch" href="/assets/js/62.444cc809.js"><link rel="prefetch" href="/assets/js/63.157bbc00.js"><link rel="prefetch" href="/assets/js/64.2ec80c70.js"><link rel="prefetch" href="/assets/js/65.d35a0001.js"><link rel="prefetch" href="/assets/js/66.6f92e582.js"><link rel="prefetch" href="/assets/js/67.9d51e14d.js"><link rel="prefetch" href="/assets/js/68.5675c3e2.js"><link rel="prefetch" href="/assets/js/69.e536d7ac.js"><link rel="prefetch" href="/assets/js/7.0dcc7463.js"><link rel="prefetch" href="/assets/js/70.e187963b.js"><link rel="prefetch" href="/assets/js/71.09bda95d.js"><link rel="prefetch" href="/assets/js/72.aefd789f.js"><link rel="prefetch" href="/assets/js/73.20936a8d.js"><link rel="prefetch" href="/assets/js/74.d17921e6.js"><link rel="prefetch" href="/assets/js/75.0ff9c5e9.js"><link rel="prefetch" href="/assets/js/76.479d210c.js"><link rel="prefetch" href="/assets/js/77.c5443f0d.js"><link rel="prefetch" href="/assets/js/78.666b2fe9.js"><link rel="prefetch" href="/assets/js/79.949a1f44.js"><link rel="prefetch" href="/assets/js/8.67e8e6f2.js"><link rel="prefetch" href="/assets/js/9.70c87633.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.da10bf32.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container reform"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/images/logo.png" alt="幺风" class="logo"> <span class="site-name can-hide">幺风</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link"><span class="reform-jia" style="font-size:1rem;"></span>
+主页</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="reform-zhi"></span> <span class="title">博文</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/frontend/" class="nav-link"><!---->
+前端</a></li><li class="dropdown-item"><!----> <a href="/blog/flutter/" class="nav-link router-link-active"><!---->
+Flutter</a></li><li class="dropdown-item"><!----> <a href="/blog/coding/" class="nav-link"><!---->
+学习思考</a></li><li class="dropdown-item"><!----> <a href="/blog/algorithm/" class="nav-link"><!---->
+算法与数据结构</a></li><li class="dropdown-item"><!----> <a href="/blog/reading/" class="nav-link"><!---->
+阅读笔记</a></li><li class="dropdown-item"><!----> <a href="/blog/reflection/" class="nav-link"><!---->
+思考</a></li><li class="dropdown-item"><!----> <a href="/blog/canvas/" class="nav-link"><!---->
+渲染相关</a></li><li class="dropdown-item"><!----> <a href="/blog/gesture/" class="nav-link"><!---->
+事件相关</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="reform-shuben"></span> <span class="title">文档</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/document/vuepress-theme-reform.html" class="nav-link"><!---->
+vuepress-theme-reform</a></li><li class="dropdown-item"><!----> <a href="/document/弹幕插件文档.html" class="nav-link"><!---->
+弹幕插件文档</a></li></ul></div></div><div class="nav-item"><a href="/tags/" class="nav-link"><!---->
+标签云</a></div><div class="nav-item"><a href="/about/" class="nav-link"><!---->
+关于我</a></div> <a href="https://github.com/xuzhongpeng" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link"><span class="reform-jia" style="font-size:1rem;"></span>
+主页</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="reform-zhi"></span> <span class="title">博文</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/frontend/" class="nav-link"><!---->
+前端</a></li><li class="dropdown-item"><!----> <a href="/blog/flutter/" class="nav-link router-link-active"><!---->
+Flutter</a></li><li class="dropdown-item"><!----> <a href="/blog/coding/" class="nav-link"><!---->
+学习思考</a></li><li class="dropdown-item"><!----> <a href="/blog/algorithm/" class="nav-link"><!---->
+算法与数据结构</a></li><li class="dropdown-item"><!----> <a href="/blog/reading/" class="nav-link"><!---->
+阅读笔记</a></li><li class="dropdown-item"><!----> <a href="/blog/reflection/" class="nav-link"><!---->
+思考</a></li><li class="dropdown-item"><!----> <a href="/blog/canvas/" class="nav-link"><!---->
+渲染相关</a></li><li class="dropdown-item"><!----> <a href="/blog/gesture/" class="nav-link"><!---->
+事件相关</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="reform-shuben"></span> <span class="title">文档</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/document/vuepress-theme-reform.html" class="nav-link"><!---->
+vuepress-theme-reform</a></li><li class="dropdown-item"><!----> <a href="/document/弹幕插件文档.html" class="nav-link"><!---->
+弹幕插件文档</a></li></ul></div></div><div class="nav-item"><a href="/tags/" class="nav-link"><!---->
+标签云</a></div><div class="nav-item"><a href="/about/" class="nav-link"><!---->
+关于我</a></div> <a href="https://github.com/xuzhongpeng" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>iOS集成flutter及flutter_boost</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/flutter/iOS%E9%9B%86%E6%88%90flutter%E5%8F%8Aflutter_boost.html#前言" class="sidebar-link">前言</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/blog/flutter/iOS%E9%9B%86%E6%88%90flutter%E5%8F%8Aflutter_boost.html#集成-flutter" class="sidebar-link">集成 flutter</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blog/flutter/iOS%E9%9B%86%E6%88%90flutter%E5%8F%8Aflutter_boost.html#新建及配置项目" class="sidebar-link">新建及配置项目</a></li><li class="sidebar-sub-header"><a href="/blog/flutter/iOS%E9%9B%86%E6%88%90flutter%E5%8F%8Aflutter_boost.html#修改-ios-代码" class="sidebar-link">修改 iOS 代码</a></li></ul></li><li><a href="/blog/flutter/iOS%E9%9B%86%E6%88%90flutter%E5%8F%8Aflutter_boost.html#ios-集成-flutter-boost" class="sidebar-link">iOS 集成 flutter_boost</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blog/flutter/iOS%E9%9B%86%E6%88%90flutter%E5%8F%8Aflutter_boost.html#flutter-配置-flutter-boost" class="sidebar-link">flutter 配置 flutter_boost</a></li><li class="sidebar-sub-header"><a href="/blog/flutter/iOS%E9%9B%86%E6%88%90flutter%E5%8F%8Aflutter_boost.html#修改-ios-代码-2" class="sidebar-link">修改 iOS 代码</a></li></ul></li></ul></section></li></ul> </aside> <main class="page" data-v-8958e280> <section class="tags" data-v-8958e280><span class="tagPopup" data-v-8958e280><a href="/tags/?tag=Flutter" class="tag" data-v-8958e280>Flutter</a></span></section> <div class="content theme-default-content content__default" data-v-8958e280><h2 id="前言"><a href="#前言" aria-hidden="true" class="header-anchor">#</a> 前言</h2> <p>flutter 算是当前最火热的跨端技术了，能够使用同一套代码轻松接入到 iOS 及 Android 甚至是 Web，那么把 flutter 集成到原有的项目中一定是当前最快速及有效的应用 flutter 的方案。下面我记录一下我集成 flutter 及阿里的开源项目 flutter_boost 的方法。</p> <h2 id="集成-flutter"><a href="#集成-flutter" aria-hidden="true" class="header-anchor">#</a> 集成 flutter</h2> <p>本例子代码集成到<a href="https://github.com/xuzhongpeng/flutter_demo" target="_blank" rel="noopener noreferrer">github<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>
+集成环境</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>flutter: 1.5.8
+flutter_boost 0.1.54
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><h3 id="新建及配置项目"><a href="#新建及配置项目" aria-hidden="true" class="header-anchor">#</a> 新建及配置项目</h3> <p>新建一个 flutter 项目，项目必须是 flutter 混编到已有项目的模式</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>flutter create -t module flutter_module
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>新建一个 iOS 项目，或修改原有的 iOS 项目，在 Podfile 中修改</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>target 'firstApp' do
+  ...
+  flutter_application_path = './flutter_module'
+  eval(File.read(File.join(flutter_application_path, '.ios', 'Flutter', 'podhelper.rb')), binding)
+  ...
+end
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><p>'./flutter_module'是本地 flutter 项目的地址，我的 flutter 项目就在 iOS 项目的目录下（跟 Podfile 文件同级），也可以使用绝对地址，然后运行<code>pod install</code>。</p> <p>然后在项目的 Build Parse 的 Run Script 中添加</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>&quot;$FLUTTER_ROOT/packages/flutter_tools/bin/xcode_backend.sh&quot; build
+&quot;$FLUTTER_ROOT/packages/flutter_tools/bin/xcode_backend.sh&quot; embed
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><p>没有 Run Script 的点击+新建一个，然后启动 iOS 项目。</p> <h3 id="修改-ios-代码"><a href="#修改-ios-代码" aria-hidden="true" class="header-anchor">#</a> 修改 iOS 代码</h3> <p>在 AppDelega.m 中</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    ...
+    [GeneratedPluginRegistrant registerWithRegistry:self];
+    return YES;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><p>添加按钮到 ViewController.m</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>- (void)viewDidLoad {
+    [super viewDidLoad];
+    UIButton *fbutton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [fbutton addTarget:self
+               action:@selector(routerTo)
+     forControlEvents:UIControlEventTouchUpInside];
+    [fbutton setTitle:@&quot;通过Flutter跳转&quot; forState:UIControlStateNormal];
+    [fbutton setBackgroundColor:[UIColor blueColor]];
+    fbutton.frame = CGRectMake(80.0, 410.0, 160.0, 40.0);
+    [self.view addSubview:fbutton];
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br></div></div><p>在 ViewController.m 中添加按钮点击事件并 push 到 flutter 页面,并在 flutter 页面上方添加一个按钮返回到 Native 页面</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>- (void)routerTo{
+    FlutterViewController *flutterViewController = [[FlutterViewController alloc] init];
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    [button addTarget:self
+               action:@selector(handleButtonAction)
+     forControlEvents:UIControlEventTouchUpInside];
+    [button setTitle:@&quot;返回&quot; forState:UIControlStateNormal];
+    [button setBackgroundColor:[UIColor blueColor]];
+    button.frame = CGRectMake(80.0, 210.0, 160.0, 40.0);
+    [flutterViewController.view addSubview:button];
+    flutterViewController.view.backgroundColor = [UIColor cyanColor];
+    [flutterViewController setInitialRoute:@&quot;route1&quot;];
+    [self presentViewController:flutterViewController animated:NO completion:nil];
+}
+- (void)handleButtonAction{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br></div></div><p>主要用了 presentViewController 及 dismissViewControllerAnimated 方法进行跳转及返回。</p> <p>预览：</p> <p><img src="https://blog-1253495453.cos.ap-chongqing.myqcloud.com/flutter%E8%B7%B3%E8%BD%AC.gif" alt="flutter跳转"></p> <h2 id="ios-集成-flutter-boost"><a href="#ios-集成-flutter-boost" aria-hidden="true" class="header-anchor">#</a> iOS 集成 flutter_boost</h2> <h3 id="flutter-配置-flutter-boost"><a href="#flutter-配置-flutter-boost" aria-hidden="true" class="header-anchor">#</a> flutter 配置 flutter_boost</h3> <p>下载 flutter_boost,在 pubspec.yaml 添加</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>flutter_boost: 0.1.54
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>执行<code>flutter pub get</code></p> <p>在 lib/main.dart 文件中修改:
+添加</p> <div class="language-dart line-numbers-mode"><pre class="language-dart"><code>FlutterBoost<span class="token punctuation">.</span>singleton<span class="token punctuation">.</span><span class="token function">registerPageBuilders</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  <span class="token string">'first'</span><span class="token punctuation">:</span> <span class="token punctuation">(</span>pageName<span class="token punctuation">,</span> params<span class="token punctuation">,</span> _<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token function">MyHomePage</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token string">'second'</span><span class="token punctuation">:</span> <span class="token punctuation">(</span>pageName<span class="token punctuation">,</span> params<span class="token punctuation">,</span> _<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token function">SecondPage</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><p>及在 MaterialApp 中修改</p> <div class="language-dart line-numbers-mode"><pre class="language-dart"><code>builder<span class="token punctuation">:</span> FlutterBoost<span class="token punctuation">.</span><span class="token function">init</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>完整代码大致如下：</p> <div class="language-dart line-numbers-mode"><pre class="language-dart"><code><span class="token keyword">import</span> <span class="token string">'package:flutter_boost/flutter_boost.dart'</span><span class="token punctuation">;</span>
+  <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+  <span class="token keyword">void</span> <span class="token function">initState</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// TODO: implement initState</span>
+    <span class="token keyword">super</span><span class="token punctuation">.</span><span class="token function">initState</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    FlutterBoost<span class="token punctuation">.</span>singleton<span class="token punctuation">.</span><span class="token function">registerPageBuilders</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+      <span class="token string">'first'</span><span class="token punctuation">:</span> <span class="token punctuation">(</span>pageName<span class="token punctuation">,</span> params<span class="token punctuation">,</span> _<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token function">MyHomePage</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+      <span class="token string">'second'</span><span class="token punctuation">:</span> <span class="token punctuation">(</span>pageName<span class="token punctuation">,</span> params<span class="token punctuation">,</span> _<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token function">SecondPage</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token metadata symbol">@override</span>
+  Widget <span class="token function">build</span><span class="token punctuation">(</span>BuildContext context<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token function">MaterialApp</span><span class="token punctuation">(</span>
+      title<span class="token punctuation">:</span> <span class="token string">'Flutter Demo'</span><span class="token punctuation">,</span>
+      builder<span class="token punctuation">:</span> FlutterBoost<span class="token punctuation">.</span><span class="token function">init</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+      theme<span class="token punctuation">:</span> <span class="token function">ThemeData</span><span class="token punctuation">(</span>
+        primarySwatch<span class="token punctuation">:</span> Colors<span class="token punctuation">.</span>blue<span class="token punctuation">,</span>
+      <span class="token punctuation">)</span><span class="token punctuation">,</span>
+      home<span class="token punctuation">:</span> <span class="token function">MyHomePage</span><span class="token punctuation">(</span>title<span class="token punctuation">:</span> <span class="token string">'Flutter Demo Home Page'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br></div></div><h3 id="修改-ios-代码-2"><a href="#修改-ios-代码-2" aria-hidden="true" class="header-anchor">#</a> 修改 iOS 代码</h3> <p>新建 MyFlutterRoute.h 文件</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>#import &lt;Foundation/Foundation.h&gt;
+#import &lt;UIKit/UIKit.h&gt;
+#import &lt;flutter_boost/FlutterBoost.h&gt;
+
+NS_ASSUME_NONNULL_BEGIN
+
+@protocol FLBPlatform;
+@interface MyFlutterRouter : NSObject&lt;FLBPlatform&gt;
+@property (nonatomic,strong) UINavigationController *navigationController;
+@end
+
+NS_ASSUME_NONNULL_END
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br></div></div><p>新建 MyFlutterRoute.m 文件</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>#import &quot;MyFlutterRouter.h&quot;
+#import &lt;flutter_boost/FlutterBoost.h&gt;
+
+@interface MyFlutterRouter()
+@end
+
+@implementation MyFlutterRouter
+
+
+- (void)open:(NSString *)name
+   urlParams:(NSDictionary *)params
+        exts:(NSDictionary *)exts
+  completion:(void (^)(BOOL))completion
+{
+    BOOL animated = [exts[@&quot;animated&quot;] boolValue];
+    FLBFlutterViewContainer *vc = FLBFlutterViewContainer.new;
+//    self.navigationController=[[UINavigationController alloc]initWithRootViewController:vc];
+    [vc setName:name params:params];
+    [self.navigationController pushViewController:vc animated:animated];
+    if(completion) completion(YES);
+}
+
+- (void)present:(NSString *)name
+      urlParams:(NSDictionary *)params
+           exts:(NSDictionary *)exts
+     completion:(void (^)(BOOL))completion
+{
+    BOOL animated = [exts[@&quot;animated&quot;] boolValue];
+    FLBFlutterViewContainer *vc = FLBFlutterViewContainer.new;
+    [vc setName:name params:params];
+    [self.navigationController presentViewController:vc animated:animated completion:^{
+        if(completion) completion(YES);
+    }];
+}
+
+- (void)close:(NSString *)uid
+       result:(NSDictionary *)result
+         exts:(NSDictionary *)exts
+   completion:(void (^)(BOOL))completion
+{
+    BOOL animated = [exts[@&quot;animated&quot;] boolValue];
+    animated = YES;
+    FLBFlutterViewContainer *vc = (id)self.navigationController.presentedViewController;
+    if([vc isKindOfClass:FLBFlutterViewContainer.class] &amp;&amp; [vc.uniqueIDString isEqual: uid]){
+        [vc dismissViewControllerAnimated:animated completion:^{}];
+    }else{
+        [self.navigationController popViewControllerAnimated:animated];
+    }
+}
+@end
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br></div></div><p>在 AppDelega.h 中添加 flutter_boost 并继承 FLBFlutterAppDelegate</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>#import &lt;UIKit/UIKit.h&gt;
+#import &lt;Flutter/Flutter.h&gt;
+#import &lt;flutter_boost/FlutterBoost.h&gt;
+#import &quot;ViewController.h&quot;
+@interface AppDelegate : FLBFlutterAppDelegate &lt;UIApplicationDelegate&gt;
+@property (strong, nonatomic) UIWindow *window;
+//用来保存app的路由
+@property (strong, nonatomic) UINavigationController *navController;
+@end
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div><p>然后在 AppDelega.m 中修改</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+
+    // 代码是将首页指向ViewController并初始化UINavigationController
+    UIWindow *window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    self.window = window;
+    ViewController *vc = [ViewController new];
+    UINavigationController *nav=[[UINavigationController alloc] initWithRootViewController:vc];
+    [nav setNavigationBarHidden:(YES) animated:(NO)];
+    self.window.rootViewController =nav;
+    [self.window makeKeyAndVisible];
+
+    // 初始化flutter_boost并给MyFlutterRouter初始化navigationController
+    MyFlutterRouter *router = [MyFlutterRouter new];
+    router.navigationController=nav;
+    [FlutterBoostPlugin.sharedInstance startFlutterWithPlatform:router
+                                                        onStart:^(FlutterEngine *fvc){
+     }];
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br></div></div><p>然后在 ViewController 中添加按钮并添加跳转事件</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>...
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    [button addTarget:self
+               action:@selector(flutterBoostRoute)
+     forControlEvents:UIControlEventTouchUpInside];
+    [button setTitle:@&quot;通过Flutter Boost跳转&quot; forState:UIControlStateNormal];
+    [button setBackgroundColor:[UIColor blueColor]];
+    button.frame = CGRectMake(80.0, 210.0, 200.0, 40.0);
+    [self.view addSubview:button];
+...
+- (void)flutterBoostRoute{
+    //通过FlutterBoostPlugin插件跳转，最终会调用MyFlutterRoute的open方法
+    //或者present方法（urlParams传参@{@&quot;present&quot;:YES,kPageCallBackId:@&quot;MycallbackId#1&quot;})
+    [FlutterBoostPlugin open:@&quot;second&quot; urlParams:@{kPageCallBackId:@&quot;MycallbackId#1&quot;} exts:@{@&quot;animated&quot;:@(YES)} onPageFinished:^(NSDictionary *result) {
+        NSLog(@&quot;call me when page finished, and your result is:%@&quot;, result);
+    } completion:^(BOOL f) {
+        NSLog(@&quot;page is opened&quot;);
+    }];
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br></div></div><p>效果：</p> <p><img src="https://blog-1253495453.cos.ap-chongqing.myqcloud.com/flutter_boost%E8%B7%B3%E8%BD%AC.gif" alt="flutter跳转"></p></div> <footer class="page-edit" data-v-8958e280><!----> <div class="last-updated" data-v-8958e280><span class="prefix" data-v-8958e280>Last Updated:</span> <span class="time" data-v-8958e280>8/12/2020, 1:34:59 PM</span></div></footer> <!----> <div id="gitalk-container" data-v-8958e280></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.f735c987.js" defer></script><script src="/assets/js/4.1b5f1a26.js" defer></script><script src="/assets/js/3.7354cf96.js" defer></script><script src="/assets/js/47.5478a007.js" defer></script>
+  </body>
+</html>
